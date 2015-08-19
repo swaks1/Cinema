@@ -2,34 +2,33 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
 
 namespace ITcinema.Admin
 {
-    public partial class List : System.Web.UI.Page
+    public partial class Listall : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
                 FillList();
         }
 
         public void FillList()
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =  ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
             string sqlSelect = "SELECT Id, Name FROM Movie ";
             SqlCommand command = new SqlCommand(sqlSelect, conn);
             try
             {
                 conn.Open();
                 SqlDataReader read = command.ExecuteReader();
-                while(read.Read())
+                while (read.Read())
                 {
                     ListItem element = new ListItem();
                     element.Text = read["Name"].ToString();
@@ -38,7 +37,7 @@ namespace ITcinema.Admin
                 }
                 read.Close();
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 lbErr.Text = err.ToString();
             }
@@ -46,6 +45,11 @@ namespace ITcinema.Admin
             {
                 conn.Close();
             }
+        }
+
+        protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectMovie(ListBox1.SelectedValue);
         }
 
         public void selectMovie(string id)
@@ -73,7 +77,7 @@ namespace ITcinema.Admin
                     lbErr0.Text = read["Image"].ToString();
                     read.Close();
                 }
-                
+
             }
             catch (Exception err)
             {
@@ -83,12 +87,6 @@ namespace ITcinema.Admin
             {
                 conn.Close();
             }
-        }
-
-        protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(ListBox1.SelectedIndex >= 0)
-                selectMovie(ListBox1.SelectedValue);
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)
@@ -113,9 +111,9 @@ namespace ITcinema.Admin
 
                     MemoryStream steam = new MemoryStream();
                     byte[] pic = steam.ToArray();
-                    cmd.Parameters.AddWithValue("@image",pic);
-                    
-                    
+                    cmd.Parameters.AddWithValue("@image", pic);
+
+
                     try
                     {
                         con.Open();
@@ -129,8 +127,8 @@ namespace ITcinema.Admin
                     {
                         con.Close();
                     }
-                    
-                   // lbErr0.Text = path;
+
+                    // lbErr0.Text = path;
                 }
                 else
                 {
@@ -139,8 +137,7 @@ namespace ITcinema.Admin
             }
             else
                 lbErr0.Text = "Upload status: Only JPEG files are accepted!";
-          
-
         }
+
     }
 }

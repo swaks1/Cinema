@@ -1,13 +1,36 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="ITcinema.Admin.List" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Listall.aspx.cs" Inherits="ITcinema.Admin.Listall" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
     <style type="text/css">
-        .auto-style3 {
-            width: 222px;
+        .auto-style1 {
+            width: 100%;
         }
     </style>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <p>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <table  align="center" class="auto-style1" style="width:800px">
+            <tr>
+                <td>
+                    <table class="auto-style1">
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>Cinema admin</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><p>
     List of all active movies:</p>
 <p>
     <asp:ListBox ID="ListBox1" runat="server" Height="120px" Width="379px" AutoPostBack="True" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"></asp:ListBox>
@@ -81,7 +104,7 @@
             <td>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnUpload" runat="server" Text="Upload" />
+                <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
     <asp:Label ID="lbErr0" runat="server" ForeColor="Red"></asp:Label>
             </td>
         </tr>
@@ -94,4 +117,15 @@
     </table>
     <p>
         &nbsp;</p>
-</asp:Content>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center">&nbsp; Proekt 2015 Internet Tehnologii</td>
+            </tr>
+        </table>
+    
+    </div>
+    </form>
+</body>
+</html>
