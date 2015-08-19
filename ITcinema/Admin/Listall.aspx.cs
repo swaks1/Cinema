@@ -51,14 +51,14 @@ namespace ITcinema.Admin
 
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectMovie(ListBox1.SelectedValue);
+            selectMovie(ListBox1.SelectedItem.Text);
         }
 
-        public void selectMovie(string id)
+        public void selectMovie(string name)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-            string sqlSelect = "SELECT * FROM Movie WHERE Id='" + id + "'";
+            string sqlSelect = "SELECT * FROM Movie WHERE Name='" + name + "'";
             SqlCommand command = new SqlCommand(sqlSelect, conn);
             try
             {
