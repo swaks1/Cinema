@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace ITcinema.Admin
 {
@@ -103,12 +104,23 @@ namespace ITcinema.Admin
             {
                 if (FileUpload1.HasFile)
                 {
-                    string str = FileUpload1.FileName;
-                    FileUpload1.PostedFile.SaveAs(Server.MapPath("..") + "//Image//" + str);
-                    string path = "~//Image//" + str.ToString();
-                    
-                    string strCmd = "UPDATE Movie SET Image='" + path + "' WHERE Id='" + ListBox1.SelectedValue + "'";
+                    //string str = FileUpload1.FileName;
+                    //FileUpload1.PostedFile.SaveAs(Server.MapPath("..") + "//Image//" + str);
+                    //string path = "~//Image//" + str.ToString();
+
+                    // ako ne e image tuku tekst pa so url da se najde slikata -.-
+                    //string str = Path.GetFileName(FileUpload1.FileName);
+                    //FileUpload1.SaveAs(Server.MapPath("~/") + str);
+                    //string path = "C:/Users/zoki/Documents/visual studio 2013/Projects/ITcinema/ITcinema/" + str.ToString();
+
+                    string strCmd = "UPDATE Movie SET Image=@image WHERE Id='" + ListBox1.SelectedValue + "'";
                     SqlCommand cmd = new SqlCommand(strCmd, con);
+
+                    MemoryStream steam = new MemoryStream();
+                    byte[] pic = steam.ToArray();
+                    cmd.Parameters.AddWithValue("@image",pic);
+                    
+                    
                     try
                     {
                         con.Open();
@@ -123,7 +135,7 @@ namespace ITcinema.Admin
                         con.Close();
                     }
                     
-                    lbErr0.Text = "Image uploaded successfully";
+                   // lbErr0.Text = path;
                 }
                 else
                 {
