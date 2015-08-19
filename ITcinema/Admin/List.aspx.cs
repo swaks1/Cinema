@@ -85,11 +85,6 @@ namespace ITcinema.Admin
             }
         }
 
-        public void open()
-        {
-            
-        }
-
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(ListBox1.SelectedIndex >= 0)

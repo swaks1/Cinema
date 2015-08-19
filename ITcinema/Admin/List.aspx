@@ -81,8 +81,7 @@
             <td>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnUpload" runat="server" OnClick="btnUpload_Click" Text="Upload" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnUpload" runat="server" Text="Upload" />
     <asp:Label ID="lbErr0" runat="server" ForeColor="Red"></asp:Label>
             </td>
         </tr>
