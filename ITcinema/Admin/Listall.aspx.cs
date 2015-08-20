@@ -30,6 +30,7 @@ namespace ITcinema.Admin
             {
                 conn.Open();
                 SqlDataReader read = command.ExecuteReader();
+                ListBox1.Items.Clear();
                 while (read.Read())
                 {
                     ListItem element = new ListItem();
@@ -76,7 +77,6 @@ namespace ITcinema.Admin
                     tbStars.Text = read["Stars"].ToString();
                     tbUrl.Text = read["URL"].ToString();
                     tbImage.ImageUrl = read["Image"].ToString();
-                    lbErr0.Text = read["Image"].ToString();
                     read.Close();
                 }
 
@@ -95,25 +95,23 @@ namespace ITcinema.Admin
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-            if (FileUpload1.PostedFile.ContentType == "image/jpeg")
+
+            if (FileUpload1.HasFile)
             {
-                if (FileUpload1.HasFile)
+                if (FileUpload1.PostedFile.ContentType == "image/jpeg")
                 {
                     //string str = FileUpload1.FileName;
                     //FileUpload1.PostedFile.SaveAs(Server.MapPath("..") + "//Image//" + str);
                     //string path = "~//Image//" + str.ToString();
 
                     // ako ne e image tuku tekst pa so url da se najde slikata -.-
-                    //string str = Path.GetFileName(FileUpload1.FileName);
-                    //FileUpload1.SaveAs(Server.MapPath("~/") + str);
-                    //string path = "C:/Users/zoki/Documents/visual studio 2013/Projects/ITcinema/ITcinema/" + str.ToString();
+                    string str = Path.GetFileName(FileUpload1.FileName);
+                    FileUpload1.SaveAs(Server.MapPath("~/Image/") + str);
+                    string path = "~/Image/" + str.ToString();
 
-                    string strCmd = "UPDATE Movie SET Image=@image WHERE Id='" + ListBox1.SelectedValue + "'";
+                    string strCmd = "UPDATE Movie SET Image=@image WHERE Name='" + ListBox1.SelectedItem.Text + "'";
                     SqlCommand cmd = new SqlCommand(strCmd, con);
-
-                    MemoryStream steam = new MemoryStream();
-                    byte[] pic = steam.ToArray();
-                    cmd.Parameters.AddWithValue("@image", pic);
+                    cmd.Parameters.AddWithValue("@image", path);
 
 
                     try
@@ -130,15 +128,64 @@ namespace ITcinema.Admin
                         con.Close();
                     }
 
-                    // lbErr0.Text = path;
+                   //  lbErr0.Text = path;
                 }
                 else
                 {
-                    lbErr0.Text = "Please select a picture";
+                    lbErr0.Text = "Upload status: Only JPEG files are accepted!";
                 }
             }
             else
-                lbErr0.Text = "Upload status: Only JPEG files are accepted!";
+                lbErr0.Text = "Please select a picture";
+
+            selectMovie(ListBox1.SelectedItem.Text);
+        }
+
+        protected void logOut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (ListBox1.SelectedIndex >= 0)
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+                string sqlSelect = "UPDATE Movie SET Name=@Name, Description=@Description, Director=@Director, Duration=@Duration," +
+                    "Genre=@Genre, Rating=@Rating, Release=@Release, Stars=@Stars, URL=@URL, Image=@Image WHERE Name='"
+                    + ListBox1.SelectedItem.Text + "'";
+                SqlCommand command = new SqlCommand(sqlSelect, conn);
+                command.Parameters.AddWithValue("@Name", tbName.Text);
+                command.Parameters.AddWithValue("@Description", tbDesctiption.Text);
+                command.Parameters.AddWithValue("@Director", tbDirector.Text);
+                command.Parameters.AddWithValue("@Duration", tbDuration.Text);
+                command.Parameters.AddWithValue("@Genre", tbGenre.Text);
+                command.Parameters.AddWithValue("@Rating", tbRating.Text);
+                command.Parameters.AddWithValue("@Release", tbRelease.Text);
+                command.Parameters.AddWithValue("@Stars", tbStars.Text);
+                command.Parameters.AddWithValue("@URL", tbUrl.Text);
+                command.Parameters.AddWithValue("@Image", tbImage.ImageUrl);
+
+                int efekt = 0;
+                try
+                {
+                    conn.Open();
+                    efekt = command.ExecuteNonQuery();
+
+                }
+                catch (Exception err)
+                {
+                    lbErr.Text = err.ToString();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                if (efekt != 0)
+                    FillList();
+            }
         }
 
     }

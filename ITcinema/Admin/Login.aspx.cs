@@ -33,15 +33,20 @@ namespace ITcinema.Admin
                     SqlDataReader read = command.ExecuteReader();
                     if (read.Read())
                     {
-                        if (pass == read["Password"].ToString().TrimEnd() && read["IsAdmin"].ToString() == "True")
+                        if (read["IsAdmin"].ToString() == "True")
                         {
-                            Session["admin"] = user;
-                            Response.Redirect("Listall.aspx");
+                            if (pass == read["Password"].ToString().TrimEnd())
+                            {
+                                Session["admin"] = user;
+                                Response.Redirect("Listall.aspx");
+                            }
+                            else
+                            {
+                                Label1.Text = "Invalid password";
+                            }
                         }
                         else
-                        {
-                            Label1.Text = "Invalid password";
-                        }
+                            Label1.Text = "Not an admin account";
                         read.Close();
                     }
                     else

@@ -22,6 +22,15 @@ namespace ITcinema.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// logOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton logOut;
+        
+        /// <summary>
         /// ListBox1 control.
         /// </summary>
         /// <remarks>

@@ -9,6 +9,9 @@
         .auto-style1 {
             width: 100%;
         }
+        .auto-style2 {
+            width: 711px;
+        }
     </style>
 </head>
 <body>
@@ -21,7 +24,10 @@
                     <table class="auto-style1">
                         <tr>
                             <td>&nbsp;</td>
-                            <td>Cinema admin</td>
+                            <td class="auto-style2">Cinema admin</td>
+                            <td>
+                                <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click">Log out</asp:LinkButton>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -39,7 +45,7 @@
     <asp:Label ID="lbErr" runat="server" ForeColor="Red"></asp:Label>
 </p>
 <p>
-    <asp:Button ID="btnEdit" runat="server" Text="Edit" />
+    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" />
     <asp:Button ID="btnInsert" runat="server" Text="Insert new" />
     <asp:Button ID="btnClear" runat="server" Text="Clear" />
     <asp:Button ID="btnDelete" runat="server" Text="Delete" />
