@@ -14,8 +14,8 @@ namespace ITcinema.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["admin"] == null)
-                Response.Redirect("Login.aspx");
+            //if (Session["admin"] == null)
+            //    Response.Redirect("Login.aspx");
             if (!IsPostBack)
                 FillList();
         }
@@ -31,6 +31,7 @@ namespace ITcinema.Admin
                 conn.Open();
                 SqlDataReader read = command.ExecuteReader();
                 ListBox1.Items.Clear();
+
                 while (read.Read())
                 {
                     ListItem element = new ListItem();
@@ -95,50 +96,52 @@ namespace ITcinema.Admin
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-
-            if (FileUpload1.HasFile)
+            if (ListBox1.SelectedIndex != -1)
             {
-                if (FileUpload1.PostedFile.ContentType == "image/jpeg")
+                if (FileUpload1.HasFile)
                 {
-                    //string str = FileUpload1.FileName;
-                    //FileUpload1.PostedFile.SaveAs(Server.MapPath("..") + "//Image//" + str);
-                    //string path = "~//Image//" + str.ToString();
-
-                    // ako ne e image tuku tekst pa so url da se najde slikata -.-
-                    string str = Path.GetFileName(FileUpload1.FileName);
-                    FileUpload1.SaveAs(Server.MapPath("~/Image/") + str);
-                    string path = "~/Image/" + str.ToString();
-
-                    string strCmd = "UPDATE Movie SET Image=@image WHERE Name='" + ListBox1.SelectedItem.Text + "'";
-                    SqlCommand cmd = new SqlCommand(strCmd, con);
-                    cmd.Parameters.AddWithValue("@image", path);
-
-
-                    try
+                    if (FileUpload1.PostedFile.ContentType == "image/jpeg")
                     {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (Exception err)
-                    {
-                        lbErr.Text = err.ToString();
-                    }
-                    finally
-                    {
-                        con.Close();
-                    }
+                        //string str = FileUpload1.FileName;
+                        //FileUpload1.PostedFile.SaveAs(Server.MapPath("..") + "//Image//" + str);
+                        //string path = "~//Image//" + str.ToString();
 
-                   //  lbErr0.Text = path;
+                        // ako ne e image tuku tekst pa so url da se najde slikata -.-
+                        string str = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/Image/") + str);
+                        string path = "~/Image/" + str.ToString();
+
+                        string strCmd = "UPDATE Movie SET Image=@image WHERE Name='" + ListBox1.SelectedItem.Text + "'";
+                        SqlCommand cmd = new SqlCommand(strCmd, con);
+                        cmd.Parameters.AddWithValue("@image", path);
+
+
+                        try
+                        {
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception err)
+                        {
+                            lbErr.Text = err.ToString();
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
+
+                        //  lbErr0.Text = path;
+                    }
+                    else
+                    {
+                        lbErr0.Text = "Upload status: Only JPEG files are accepted!";
+                    }
                 }
                 else
-                {
-                    lbErr0.Text = "Upload status: Only JPEG files are accepted!";
-                }
-            }
-            else
-                lbErr0.Text = "Please select a picture";
+                    lbErr0.Text = "Please select a picture";
 
-            selectMovie(ListBox1.SelectedItem.Text);
+                selectMovie(ListBox1.SelectedItem.Text);
+            }
         }
 
         protected void logOut_Click(object sender, EventArgs e)
@@ -183,8 +186,33 @@ namespace ITcinema.Admin
                 {
                     conn.Close();
                 }
-                if (efekt != 0)
-                    FillList();
+                FillList();
+            }
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(ListBox1.SelectedIndex != -1)
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+                string sqlSelect = "DELETE FROM Movie WHERE Id=@Id";
+                SqlCommand command = new SqlCommand(sqlSelect, conn);
+                command.Parameters.AddWithValue("@Id", ListBox1.SelectedValue);
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception err)
+                {
+                    lbErr.Text = err.ToString();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                FillList();
             }
         }
 

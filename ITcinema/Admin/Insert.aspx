@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Listall.aspx.cs" Inherits="ITcinema.Admin.Listall" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Insert.aspx.cs" Inherits="ITcinema.Admin.Insert" %>
 
 <!DOCTYPE html>
 
@@ -7,18 +7,17 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 100%;
+            width: 790px;
         }
         .auto-style2 {
-            width: 711px;
+            width: 712px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-    
-        <table  align="center" class="auto-style1" style="width:800px">
+          <table  align="center" class="auto-style1" style="width:800px">
             <tr>
                 <td>
                     <table class="auto-style1">
@@ -37,17 +36,12 @@
             </tr>
             <tr>
                 <td><p>
-    List of all active movies:</p>
-<p>
-    <asp:ListBox ID="ListBox1" runat="server" Height="120px" Width="379px" AutoPostBack="True" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"></asp:ListBox>
-</p>
+                    Insert new movie:</p>
     <p>
     <asp:Label ID="lbErr" runat="server" ForeColor="Red"></asp:Label>
 </p>
 <p>
-    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" />
-    <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
-    </p>
+    &nbsp;</p>
     <table class="auto-style1">
         <tr>
             <td class="auto-style3">Name:</td>
@@ -97,30 +91,26 @@
                 <asp:TextBox ID="tbRelease" runat="server" Width="155px"></asp:TextBox>
             </td>
         </tr>
-        <tr>
-            <td class="auto-style3">Image:</td>
-            <td>
-                <asp:Image ID="tbImage" runat="server" Height="117px" Width="130px" />
-            </td>
-        </tr>
+        
         <tr>
             <td class="auto-style3">Image upload:</td>
             <td>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
-    <asp:Label ID="lbErr0" runat="server" ForeColor="Red"></asp:Label>
+                <asp:Label ID="lbErr0" runat="server" ForeColor="Red"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">URL:</td>
             <td>
                 <asp:TextBox ID="tbUrl" runat="server" Width="159px"></asp:TextBox>
+                <br />
             </td>
         </tr>
     </table>
     <p>
-        &nbsp;</p>
+    <asp:Button ID="btnInsert" runat="server" Text="Insert new" OnClick="btnInsert_Click" />
+                    </p>
 
                 </td>
             </tr>
@@ -128,7 +118,6 @@
                 <td style="text-align: center">&nbsp; Proekt 2015 Internet Tehnologii</td>
             </tr>
         </table>
-    
     </div>
     </form>
 </body>
