@@ -9,8 +9,15 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 711px;
+        .auto-style3 {
+            width: 713px;
+        }
+        .auto-style8 {
+            width: 265px;
+            text-align: left;
+        }
+        .auto-style9 {
+            width: 341px;
         }
     </style>
 </head>
@@ -23,9 +30,12 @@
                 <td>
                     <table class="auto-style1">
                         <tr>
-                            <td>&nbsp;</td>
-                            <td class="auto-style2">Cinema admin</td>
-                            <td>
+                             <td class="auto-style5">&nbsp;</td>
+                            <td class="auto-style9">Cinema admin</td>
+                            <td class="auto-style8">
+                                <asp:LinkButton ID="home" runat="server" OnClick="home_Click">Home</asp:LinkButton>
+                            </td>
+                            <td class="auto-style5">
                                 <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click">Log out</asp:LinkButton>
                             </td>
                         </tr>
@@ -55,6 +65,10 @@
                 <asp:TextBox ID="tbName" runat="server" Width="156px"></asp:TextBox>
             </td>
         </tr>
+         <td class="auto-style3">Name(Macedonian):</td>
+            <td>
+                <asp:TextBox ID="tbNameMk" runat="server" Width="156px"></asp:TextBox>
+            </td>
         <tr>
             <td class="auto-style3">Description:</td>
             <td>

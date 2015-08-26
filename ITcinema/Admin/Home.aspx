@@ -37,7 +37,10 @@
             <tr>
                 <td>
                              <p>
-                                <asp:LinkButton ID="lbListall" runat="server" OnClick="lbListall_Click" >Edit, insert, delete movies</asp:LinkButton>
+                                <asp:LinkButton ID="lbListall" runat="server" OnClick="lbListall_Click" >Editc, delete movies</asp:LinkButton>
+                            </p>
+                             <p>
+                                 <asp:LinkButton ID="lbInsert" runat="server" OnClick="lbInsert_Click" >Insert movies</asp:LinkButton>
                             </p>
                              <p>
                                 <asp:LinkButton ID="lbProgram" runat="server" OnClick="lbProgram_Click" >Edit program</asp:LinkButton>

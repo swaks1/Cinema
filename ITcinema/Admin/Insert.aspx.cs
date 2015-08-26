@@ -73,5 +73,9 @@ namespace ITcinema.Admin
             Session.Abandon();
             Response.Redirect("Login.aspx");
         }
+        protected void home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
+        }
     }
 }

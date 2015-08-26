@@ -40,6 +40,15 @@ namespace ITcinema.Admin {
         protected global::System.Web.UI.WebControls.LinkButton lbListall;
         
         /// <summary>
+        /// lbInsert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbInsert;
+        
+        /// <summary>
         /// lbProgram control.
         /// </summary>
         /// <remarks>

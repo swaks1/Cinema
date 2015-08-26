@@ -22,9 +22,12 @@
                 <td>
                     <table class="auto-style1">
                         <tr>
-                            <td>&nbsp;</td>
-                            <td class="auto-style2">Cinema admin</td>
-                            <td>
+                             <td class="auto-style5">&nbsp;</td>
+                            <td class="auto-style8">Cinema admin</td>
+                            <td class="auto-style5">
+                                <asp:LinkButton ID="home" runat="server" OnClick="home_Click"  >Home</asp:LinkButton>
+                            </td>
+                            <td class="auto-style5">
                                 <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click">Log out</asp:LinkButton>
                             </td>
                         </tr>
@@ -47,48 +50,63 @@
             <td class="auto-style3">Name:</td>
             <td>
                 <asp:TextBox ID="tbName" runat="server" Width="156px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbName"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style3">Name(Macedonian):</td>
+            <td>
+                <asp:TextBox ID="tbNameMk" runat="server" Width="156px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbNameMk"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Description:</td>
             <td>
                 <asp:TextBox ID="tbDesctiption" runat="server" Height="46px" TextMode="MultiLine" Width="412px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbDesctiption"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Duration:</td>
             <td>
                 <asp:TextBox ID="tbDuration" runat="server" Width="160px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbDuration"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Genre:</td>
             <td>
                 <asp:TextBox ID="tbGenre" runat="server" Width="161px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbGenre"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Rating:</td>
             <td>
                 <asp:TextBox ID="tbRating" runat="server" Width="159px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbRating"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Stars:</td>
             <td>
                 <asp:TextBox ID="tbStars" runat="server" Width="159px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbStars"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Director:</td>
             <td>
                 <asp:TextBox ID="tbDirector" runat="server" Width="159px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbDirector"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Release:</td>
             <td>
                 <asp:TextBox ID="tbRelease" runat="server" Width="155px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbRelease"></asp:RequiredFieldValidator>
             </td>
         </tr>
         
@@ -104,6 +122,7 @@
             <td class="auto-style3">URL:</td>
             <td>
                 <asp:TextBox ID="tbUrl" runat="server" Width="159px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="tbUrl"></asp:RequiredFieldValidator>
                 <br />
             </td>
         </tr>

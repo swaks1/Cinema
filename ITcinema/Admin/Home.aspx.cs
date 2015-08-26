@@ -30,5 +30,10 @@ namespace ITcinema.Admin
         {
             Response.Redirect("Listall.aspx");
         }
+
+        protected void lbInsert_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Insert.aspx");
+        }
     }
 }

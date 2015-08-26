@@ -62,6 +62,7 @@ namespace ITcinema.Admin
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
             string sqlSelect = "SELECT * FROM Movie WHERE Name='" + name + "'";
             SqlCommand command = new SqlCommand(sqlSelect, conn);
+
             try
             {
                 conn.Open();
@@ -214,6 +215,11 @@ namespace ITcinema.Admin
                 }
                 FillList();
             }
+        }
+
+        protected void home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
         }
 
     }

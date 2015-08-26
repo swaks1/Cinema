@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +15,39 @@ namespace ITcinema.Admin
         {
             //if (Session["admin"] == null)
             //    Response.Redirect("Login.aspx");
+            if (!IsPostBack)
+                FillList();
+        }
+
+        public void FillList()
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+            string sqlSelect = "SELECT Id, Name FROM Movie ";
+            SqlCommand command = new SqlCommand(sqlSelect, conn);
+            try
+            {
+                conn.Open();
+                SqlDataReader read = command.ExecuteReader();
+                ListBox1.Items.Clear();
+
+                while (read.Read())
+                {
+                    ListItem element = new ListItem();
+                    element.Text = read["Name"].ToString();
+                    element.Value = read["Id"].ToString();
+                    ListBox1.Items.Add(element);
+                }
+                read.Close();
+            }
+            catch (Exception err)
+            {
+               // lbErr.Text = err.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         protected void logOut_Click(object sender, EventArgs e)
@@ -20,5 +55,100 @@ namespace ITcinema.Admin
             Session.Abandon();
             Response.Redirect("Login.aspx");
         }
+        protected void home_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
+        }
+
+        protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectMovie(ListBox1.SelectedItem.Text);
+        }
+
+        public void selectMovie(string name)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+            string sqlSelect = "SELECT * FROM Movie WHERE Name='" + name + "'";
+            SqlCommand command = new SqlCommand(sqlSelect, conn);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader read = command.ExecuteReader();
+                if (read.Read())
+                {
+                    tbName.Text = read["Name"].ToString();
+                  
+                    read.Close();
+                }
+
+            }
+            catch (Exception err)
+            {
+              //  lbErr.Text = err.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+            string sqlSelect = "INSERT INTO Program (Id, Name, StartDate, EndDate, Time ) VALUES " +
+                    "(@Id, @Name, @StartDate, @EndDate, @Time) "; 
+            SqlCommand command = new SqlCommand(sqlSelect, conn);
+            Random r = new Random();
+            command.Parameters.AddWithValue("@Id", r.Next(200, 300) + r.Next(100));
+            command.Parameters.AddWithValue("@Name", tbName.Text);
+            command.Parameters.AddWithValue("@StartDate", tbStart.Text);
+            command.Parameters.AddWithValue("@EndDate", tbEnd.Text);
+            command.Parameters.AddWithValue("@Time", tbTime.Text);
+            try
+            {
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                //  lbErr.Text = err.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        protected void CalendarEnd_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date.CompareTo(CalendarStart.SelectedDate) < 0)
+            {
+                e.Day.IsSelectable = false;
+            }
+        }
+
+        protected void CalendarStart_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.Date.CompareTo(DateTime.Today) < 0)
+            {
+                e.Day.IsSelectable = false;
+            }
+        }
+
+        protected void CalendarStart_SelectionChanged(object sender, EventArgs e)
+        {
+            tbStart.Text = CalendarStart.SelectedDate.ToString("dd-MM-yyyy");
+        }
+
+        protected void CalendarEnd_SelectionChanged(object sender, EventArgs e)
+        {
+            tbEnd.Text = CalendarEnd.SelectedDate.ToString("dd-MM-yyyy");
+        }
+
+
+
     }
 }
