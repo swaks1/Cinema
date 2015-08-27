@@ -45,6 +45,9 @@
                              <p>
                                 <asp:LinkButton ID="lbProgram" runat="server" OnClick="lbProgram_Click" >Edit program</asp:LinkButton>
                             </p>
+                             <p>
+                                 <asp:Label ID="Label1" runat="server"></asp:Label>
+                            </p>
 
                 </td>
             </tr>

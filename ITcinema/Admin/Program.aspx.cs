@@ -55,6 +55,7 @@ namespace ITcinema.Admin
             Session.Abandon();
             Response.Redirect("Login.aspx");
         }
+
         protected void home_Click(object sender, EventArgs e)
         {
             Response.Redirect("Home.aspx");
@@ -98,19 +99,27 @@ namespace ITcinema.Admin
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-            string sqlSelect = "INSERT INTO Program (Id, Name, StartDate, EndDate, Time ) VALUES " +
-                    "(@Id, @Name, @StartDate, @EndDate, @Time) "; 
-            SqlCommand command = new SqlCommand(sqlSelect, conn);
-            Random r = new Random();
-            command.Parameters.AddWithValue("@Id", r.Next(200, 300) + r.Next(100));
-            command.Parameters.AddWithValue("@Name", tbName.Text);
-            command.Parameters.AddWithValue("@StartDate", tbStart.Text);
-            command.Parameters.AddWithValue("@EndDate", tbEnd.Text);
-            command.Parameters.AddWithValue("@Time", tbTime.Text);
+
             try
             {
                 conn.Open();
+
+                string sqlSelect = "INSERT INTO Program (Id, Name, StartDate, EndDate, Time ) VALUES " +
+                    "(@Id, @Name, @StartDate, @EndDate, @Time) ";
+                SqlCommand command = new SqlCommand(sqlSelect, conn);
+                Random r = new Random();
+                command.Parameters.AddWithValue("@Id", r.Next(200, 300) + r.Next(100));
+                command.Parameters.AddWithValue("@Name", tbName.Text);
+                command.Parameters.AddWithValue("@StartDate", tbStart.Text);
+                command.Parameters.AddWithValue("@EndDate", tbEnd.Text);
+                command.Parameters.AddWithValue("@Time", tbTime.Text);
                 command.ExecuteNonQuery();
+                var dates = new List<string>();
+
+                for (var dt = (DateTime)ViewState["start"]; dt <= (DateTime)ViewState["end"]; dt = dt.AddDays(1))
+                {
+                    dates.Add(dt.ToString("dd.MM.yyyy"));
+                }
             }
             catch (Exception err)
             {
@@ -120,6 +129,8 @@ namespace ITcinema.Admin
             {
                 conn.Close();
             }
+
+            Response.Redirect("Home.aspx?name=" + tbName.Text + "&start=" + tbStart.Text + "&time=" + tbTime.Text);
         }
 
         protected void CalendarEnd_DayRender(object sender, DayRenderEventArgs e)
@@ -140,12 +151,15 @@ namespace ITcinema.Admin
 
         protected void CalendarStart_SelectionChanged(object sender, EventArgs e)
         {
-            tbStart.Text = CalendarStart.SelectedDate.ToString("dd-MM-yyyy");
+            ViewState["start"] = CalendarStart.SelectedDate;
+            tbStart.Text = CalendarStart.SelectedDate.ToString("dd.MM.yyyy");
         }
 
         protected void CalendarEnd_SelectionChanged(object sender, EventArgs e)
         {
-            tbEnd.Text = CalendarEnd.SelectedDate.ToString("dd-MM-yyyy");
+            tbEnd.Text = CalendarEnd.SelectedDate.ToString("dd.MM.yyyy");
+            ViewState["end"] = CalendarEnd.SelectedDate;
+
         }
 
 

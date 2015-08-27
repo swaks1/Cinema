@@ -13,6 +13,14 @@ namespace ITcinema.Admin
         {
             //if (Session["admin"] == null)
             //    Response.Redirect("Login.aspx");
+            string name = Request.QueryString["name"];
+            string start = Request.QueryString["start"];
+            string time = Request.QueryString["time"];
+            if (name != null)
+                Label1.Text = "the movie " + name + "was added to the active program. Starting from " + start + " at " + time;
+            else
+                Label1.Text = "";
+
         }
 
         protected void logOut_Click(object sender, EventArgs e)

@@ -197,12 +197,18 @@ namespace ITcinema.Admin
             {
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-                string sqlSelect = "DELETE FROM Movie WHERE Id=@Id";
+                string sqlSelect = "DELETE FROM Movie WHERE Name=@Name";
                 SqlCommand command = new SqlCommand(sqlSelect, conn);
-                command.Parameters.AddWithValue("@Id", ListBox1.SelectedValue);
+                command.Parameters.AddWithValue("@Name", ListBox1.SelectedItem.Text);
+
+                string sqlProgram = "DELETE FROM Program WHERE Name=@Name";
+                SqlCommand command2 = new SqlCommand(sqlProgram, conn);
+                command2.Parameters.AddWithValue("@Name", ListBox1.SelectedItem.Text);
+
                 try
                 {
                     conn.Open();
+                    command2.ExecuteNonQuery();
                     command.ExecuteNonQuery();
                 }
                 catch (Exception err)
