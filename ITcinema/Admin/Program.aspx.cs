@@ -103,22 +103,19 @@ namespace ITcinema.Admin
             try
             {
                 conn.Open();
-
-                string sqlSelect = "INSERT INTO Program (Id, Name, StartDate, EndDate, Time ) VALUES " +
-                    "(@Id, @Name, @StartDate, @EndDate, @Time) ";
-                SqlCommand command = new SqlCommand(sqlSelect, conn);
-                Random r = new Random();
-                command.Parameters.AddWithValue("@Id", r.Next(200, 300) + r.Next(100));
-                command.Parameters.AddWithValue("@Name", tbName.Text);
-                command.Parameters.AddWithValue("@StartDate", tbStart.Text);
-                command.Parameters.AddWithValue("@EndDate", tbEnd.Text);
-                command.Parameters.AddWithValue("@Time", tbTime.Text);
-                command.ExecuteNonQuery();
-                var dates = new List<string>();
-
                 for (var dt = (DateTime)ViewState["start"]; dt <= (DateTime)ViewState["end"]; dt = dt.AddDays(1))
                 {
-                    dates.Add(dt.ToString("dd.MM.yyyy"));
+                    string sqlSelect = "INSERT INTO Program (Id, Name, StartDate, EndDate, Time ) VALUES " +
+                        "(@Id, @Name, @StartDate, @EndDate, @Time) ";
+                    SqlCommand command = new SqlCommand(sqlSelect, conn);
+                    Random r = new Random();
+                    command.Parameters.AddWithValue("@Id", r.Next(200, 300) + r.Next(100));
+                    command.Parameters.AddWithValue("@Name", tbName.Text);
+                    command.Parameters.AddWithValue("@StartDate", dt.ToString("dd.MM.yyyy"));
+                    command.Parameters.AddWithValue("@EndDate", tbEnd.Text);
+                    command.Parameters.AddWithValue("@Time", tbTime.Text);
+                    command.ExecuteNonQuery();
+
                 }
             }
             catch (Exception err)

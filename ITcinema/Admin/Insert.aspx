@@ -25,10 +25,10 @@
                              <td class="auto-style5">&nbsp;</td>
                             <td class="auto-style8">Cinema admin</td>
                             <td class="auto-style5">
-                                <asp:LinkButton ID="home" runat="server" OnClick="home_Click"  >Home</asp:LinkButton>
+                                <asp:LinkButton ID="home" runat="server" OnClick="home_Click" CausesValidation="False"  >Home</asp:LinkButton>
                             </td>
                             <td class="auto-style5">
-                                <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click">Log out</asp:LinkButton>
+                                <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click" CausesValidation="False">Log out</asp:LinkButton>
                             </td>
                         </tr>
                     </table>
