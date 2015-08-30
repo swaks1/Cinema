@@ -23,16 +23,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <%--<form id="form1" runat="server">--%>
         <div class="full">
             <div class="menu">
                 <ul>
-                    <li><asp:HyperLink ID="hl1" runat="server" NavigateUrl="Home.aspx"><div class="hm"><i class="home1"></i><i class="home2"></i></div></asp:HyperLink></li>
-                    <li><asp:HyperLink ID="hl2" runat="server" NavigateUrl="Bookticket.aspx"><div class="video"><i class="videos"></i><i class="videos1"></i></div></asp:HyperLink></li>
-                    <li><asp:HyperLink ID="hl3" runat="server" NavigateUrl="Bookticket.aspx"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></asp:HyperLink></li>
-                    <li><asp:HyperLink ID="hl4" runat="server" NavigateUrl="Bookticket.aspx"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></asp:HyperLink></li>
-                    <li><asp:HyperLink ID="hl5" runat="server" NavigateUrl="Bookticket.aspx"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></asp:HyperLink></li>
-                    <!-- <li><a href="contact.html"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></a></li> -->
+                    <li><asp:HyperLink ID="hlHome" runat="server" NavigateUrl="Home.aspx"><div class="hm"><i class="home1"></i><i class="home2"></i></div></asp:HyperLink></li>
+                    <li><asp:HyperLink ID="hlProgram" runat="server" NavigateUrl="#"><div class="video"><i class="videos"></i><i class="videos1"></i></div></asp:HyperLink></li>
+                    <li><asp:HyperLink ID="hlBooking" runat="server" NavigateUrl="Bookticket.aspx"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></asp:HyperLink></li>
+                    <li><asp:HyperLink ID="hlAbout" runat="server" NavigateUrl="#"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></asp:HyperLink></li>
+                    <li><asp:HyperLink ID="hlContact" runat="server" NavigateUrl="Contact.aspx"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></asp:HyperLink></li>
                 </ul>
             </div>
             <div class="main">
@@ -50,11 +49,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="clearfix"></div>
 			</div>
-                <div class="text-center">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
                     </asp:ContentPlaceHolder>
-                </div>
                 <div class="footer">
                     <h6>Disclaimer : </h6>
                     <p class="claim">This is a freebies and not an official website, I have no intention of disclose any movie, brand, news.My goal here is to train or excercise my skill and share this freebies.</p>
@@ -64,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="clearfix"></div>
-    </form>
+    <%--</form>--%>
 </body>
 </html>
 

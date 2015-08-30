@@ -2,13 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(window).load(function () {
-            $("#hl1").addClass("active");
+            $("#hlHome").addClass("active");
         });
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="header">
-               <%-- <div class="header-info"  style="background-color:#4b4a4a;">
+ <div class="text-center">
+    <%--<div class="header">
+               <div class="header-info"  style="background-color:#4b4a4a;">
                     <h1>BIG HERO 6</h1>
                     <p class="age"><a href="#">All Age</a> Don Hall, Chris Williams</p>
                     <p class="review">Rating	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;  8,5/10</p>
@@ -17,8 +18,8 @@
                     <p class="special">The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.</p>
                     <a class="video" href="#"><i class="video1"></i>WATCH TRAILER</a>
                     <a class="book" href="#"><i class="book1"></i>BOOK TICKET</a>
-                </div>--%>
-        </div>
+                </div>
+        </div>--%>
             <div class="video">
                 <iframe id="iframe"  frameborder="0" allowfullscreen runat="server"></iframe>
             </div>
@@ -83,6 +84,7 @@
                 <div class="clearfix"></div>
             </div>
 
+    </div>
 
     </asp:Content>
 

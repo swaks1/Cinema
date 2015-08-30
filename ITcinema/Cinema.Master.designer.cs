@@ -22,58 +22,49 @@ namespace ITcinema {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// form1 control.
+        /// hlHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.HyperLink hlHome;
         
         /// <summary>
-        /// hl1 control.
+        /// hlProgram control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl1;
+        protected global::System.Web.UI.WebControls.HyperLink hlProgram;
         
         /// <summary>
-        /// hl2 control.
+        /// hlBooking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl2;
+        protected global::System.Web.UI.WebControls.HyperLink hlBooking;
         
         /// <summary>
-        /// hl3 control.
+        /// hlAbout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl3;
+        protected global::System.Web.UI.WebControls.HyperLink hlAbout;
         
         /// <summary>
-        /// hl4 control.
+        /// hlContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl4;
-        
-        /// <summary>
-        /// hl5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hl5;
+        protected global::System.Web.UI.WebControls.HyperLink hlContact;
         
         /// <summary>
         /// HyperLink2 control.

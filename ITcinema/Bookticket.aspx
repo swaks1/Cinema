@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(window).load(function () {
-            $("#hl4").addClass("active");
+            $("#hlBooking").addClass("active");
         });
     </script>
 </asp:Content>
