@@ -103,9 +103,6 @@ namespace ITcinema.Admin
                 {
                     if (FileUpload1.PostedFile.ContentType == "image/jpeg")
                     {
-                        //string str = FileUpload1.FileName;
-                        //FileUpload1.PostedFile.SaveAs(Server.MapPath("..") + "//Image//" + str);
-                        //string path = "~//Image//" + str.ToString();
 
                         // ako ne e image tuku tekst pa so url da se najde slikata -.-
                         string str = Path.GetFileName(FileUpload1.FileName);
@@ -157,11 +154,12 @@ namespace ITcinema.Admin
             {
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-                string sqlSelect = "UPDATE Movie SET Name=@Name, Description=@Description, Director=@Director, Duration=@Duration," +
+                string sqlSelect = "UPDATE Movie SET Name=@Name, NameMk=@NameMk, Description=@Description, Director=@Director, Duration=@Duration," +
                     "Genre=@Genre, Rating=@Rating, Release=@Release, Stars=@Stars, URL=@URL, Image=@Image WHERE Name='"
                     + ListBox1.SelectedItem.Text + "'";
                 SqlCommand command = new SqlCommand(sqlSelect, conn);
                 command.Parameters.AddWithValue("@Name", tbName.Text);
+                command.Parameters.AddWithValue("@NameMk", tbNameMk.Text);
                 command.Parameters.AddWithValue("@Description", tbDesctiption.Text);
                 command.Parameters.AddWithValue("@Director", tbDirector.Text);
                 command.Parameters.AddWithValue("@Duration", tbDuration.Text);

@@ -28,14 +28,15 @@ namespace ITcinema.Admin
                 FileUpload1.SaveAs(Server.MapPath("~/Image/") + str);
                 string path = "~/Image/" + str.ToString();
 
-                string sqlSelect = "INSERT INTO Movie (Id, Name, Description, Director, Duration," +
+                string sqlSelect = "INSERT INTO Movie (Id, Name, NameMk, Description, Director, Duration," +
                     "Genre, Rating, Release, Stars, URL, Image  ) VALUES " +
-                    "(@Id, @Name, @Description, @Director, @Duration," +
+                    "(@Id, @Name, @NameMk, @Description, @Director, @Duration," +
                     "@Genre, @Rating, @Release, @Stars, @URL, @Image) ";
                 SqlCommand command = new SqlCommand(sqlSelect, conn);
                 Random r = new Random();
                 command.Parameters.AddWithValue("@Id", r.Next(100,200) + r.Next(100));
                 command.Parameters.AddWithValue("@Name", tbName.Text);
+                command.Parameters.AddWithValue("@NameMk", tbNameMk.Text);
                 command.Parameters.AddWithValue("@Description", tbDesctiption.Text);
                 command.Parameters.AddWithValue("@Director", tbDirector.Text);
                 command.Parameters.AddWithValue("@Duration", tbDuration.Text);
