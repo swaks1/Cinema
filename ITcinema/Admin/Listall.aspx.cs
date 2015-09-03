@@ -70,6 +70,7 @@ namespace ITcinema.Admin
                 if (read.Read())
                 {
                     tbName.Text = read["Name"].ToString();
+                    tbNameMk.Text = read["NameMk"].ToString();
                     tbDesctiption.Text = read["Description"].ToString();
                     tbDirector.Text = read["Director"].ToString();
                     tbDuration.Text = read["Duration"].ToString();

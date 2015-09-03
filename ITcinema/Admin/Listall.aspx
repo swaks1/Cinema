@@ -10,7 +10,7 @@
             width: 100%;
         }
         .auto-style3 {
-            width: 713px;
+            width: 655px;
         }
         .auto-style8 {
             width: 265px;
@@ -55,7 +55,6 @@
     <asp:Label ID="lbErr" runat="server" ForeColor="Red"></asp:Label>
 </p>
 <p>
-    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" />
     <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
     </p>
     <table class="auto-style1">
@@ -130,6 +129,17 @@
             <td class="auto-style3">URL:</td>
             <td>
                 <asp:TextBox ID="tbUrl" runat="server" Width="159px"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style3">&nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style3">&nbsp;</td>
+            <td>
+    <asp:Button ID="btnEdit" runat="server" Text="Save changes" OnClick="btnEdit_Click" />
             </td>
         </tr>
     </table>
