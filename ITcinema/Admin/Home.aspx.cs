@@ -17,7 +17,7 @@ namespace ITcinema.Admin
             string start = Request.QueryString["start"];
             string time = Request.QueryString["time"];
             if (name != null)
-                Label1.Text = "the movie " + name + "was added to the active program. Starting from " + start + " at " + time;
+                Label1.Text = "the movie " + name + " was added to the active program. Starting from " + start + " at " + time;
             else
                 Label1.Text = "";
 
