@@ -99,7 +99,7 @@ namespace ITcinema
 
         protected void btnCekor2_Click(object sender, EventArgs e)
         {
-            if (ddlMovie.SelectedIndex > 0 && ddlDate.SelectedIndex != -1 && (List<string>)ViewState["seats"] != null)
+            if (ddlMovie.SelectedIndex > 0 && ddlDate.SelectedIndex > 0 && (List<string>)ViewState["seats"] != null)
             {
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
@@ -126,7 +126,19 @@ namespace ITcinema
                     conn.Close();
                 }
                 if (efekt > 0)
-                    Response.Redirect("Home.aspx");
+                {
+                    List<string> tickets = (List<string>)ViewState["seats"];
+                    for (int i = 0; i < tickets.Count; i++ )
+                    {
+                        tickets[i] = tickets[i].Replace("btn", "");
+                    }
+                    lbBrTiket.Text = tickets.Count.ToString();
+                    lbTotal.Text = tickets.Count + " X 150 = " + tickets.Count * 150;
+                    lbSeats.Text = String.Join(", ", tickets);
+                    confirm.Visible = true;
+                    moviedate.Visible = false;
+                    bookseats.Visible = false;
+                }
             }
             //Response.Redirect("Bookticket.aspx?error=selektirajdataifilm&Movie=" + ddlMovie.SelectedItem.Text + "&date=" + ddlDate.SelectedItem.Text.Split(' ')[0]);
 
@@ -134,11 +146,18 @@ namespace ITcinema
 
         protected void ddlMovie_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ddlMovie.SelectedIndex <= 0)
+                btnCekor1.Enabled = false;
             fillDdlDate(ddlMovie.SelectedItem.Text);
         }
 
         protected void ddlDate_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ddlDate.SelectedIndex > 0)
+                btnCekor1.Enabled = true;
+            else
+                btnCekor1.Enabled = false;
+
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
             string sqlSelect = "SELECT * from Program WHERE Name=@Name AND StartDate=@StartDate";
@@ -164,10 +183,7 @@ namespace ITcinema
                             btn.Enabled = false;
                             btn.BackColor = Color.Gray;
                         }
-                        else
-                        {
-                            lbSelected.Text += id + " ";
-                        }
+
                     }
                 }
                 reader.Close();

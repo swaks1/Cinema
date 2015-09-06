@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <title>Cinema A Entertainment Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+     <title>Cinema </title>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<p>Movie Theater</p>
 				</div>
                     <div class="search v-search" style="border: none; margin-left: 35px;width: 136px;">
-                        <asp:HyperLink ID="HyperLink1" runat="server" >Регистрација</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Registration.aspx">Регистрација</asp:HyperLink>
                     </div>
 				<div class="search v-search">
 						<input runat="server" type="text" value="Пребарај.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
@@ -52,11 +52,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
 
-                <div class="footer">
-                    <h6>Disclaimer : </h6>
-                    <p class="claim">This is a freebies and not an official website, I have no intention of disclose any movie, brand, news.My goal here is to train or excercise my skill and share this freebies.</p>
-                    <div class="copyright">
-                    </div>
+                <div class="clearfix"></div>
+                <div class="footer text-center">
+<%--                    <h6>Disclaimer : </h6>--%>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="Home.aspx">Дома</asp:HyperLink> <br />
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="Program.aspx">Програма</asp:HyperLink><br />
+                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="Bookticket.aspx">Резервација на билети</asp:HyperLink><br />
+                    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="#">За нас</asp:HyperLink><br />
+                    <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="Contact.aspx">Контакт</asp:HyperLink><br />
+                    
                 </div>
             </div>
         </div>

@@ -30,6 +30,11 @@
         <br />
         <br />
     <asp:Panel ID="moviedate" runat="server">
+        <h3>Чекор 1 /3</h3>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
         <p>
             Изберете филм
         </p>
@@ -48,11 +53,20 @@
         <br />
         <br />
         <br />
-        <asp:Button ID="btnCekor1" runat="server" Text="Следен чекор" OnClick="btnCekor1_Click" />
+        <asp:Button ID="btnCekor1" runat="server" Text="Следен чекор" CssClass="steps-btn" OnClick="btnCekor1_Click" Enabled="false" />
 
     </asp:Panel>
 
     <asp:Panel ID="bookseats" runat="server" Visible="False">
+        <h3>Чекор 2 /3</h3>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>Избетере седишта</p>
+        
+        <br />
+        
         <table class="nav-justified seats" style="width:60%;" align="center">
             <tr style="height:120px;">
                 <td class="auto-style1">&nbsp;</td>
@@ -357,15 +371,31 @@
         <br />
         <br />
         <br />
-   <asp:Button  ID="btnOtkazi" runat="server" Text="Откажи" OnClick="btnOtkazi_Click"  />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <asp:Button  ID="btnOtkazi" runat="server" Text="Назад"  CssClass="steps-btn"  OnClick="btnOtkazi_Click"  />
                             
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnCekor2" runat="server" OnClick="btnCekor2_Click" Text="Потврди резервација" />
+        <asp:Button ID="btnCekor2" runat="server" OnClick="btnCekor2_Click"  CssClass="steps-btn" Text="Потврди резервација" />
                             
         <br />
         <asp:Label ID="lbSelected" CssClass="lbSelected" runat="server" ></asp:Label>
                             
     </asp:Panel>
+
+        <asp:Panel ID="confirm" runat="server" Visible="false">
+            <h3>Чекор 3 /3</h3>
+            <p>
+                &nbsp;</p>
+            <p>
+                &nbsp;</p>
+            <p>
+                Имате избрано <asp:Label ID="lbBrTiket" runat="server" Text=""></asp:Label> 
+                <br />
+                Вкупно <asp:Label ID="lbTotal" runat="server" Text=""></asp:Label> денари.
+                <br />
+                Број на седишта: <asp:Label ID="lbSeats" runat="server" Text=""></asp:Label>
+            </p>
+        </asp:Panel>
     </div>
     <div class="clearfix"></div>
     <div class="clearfix"></div>

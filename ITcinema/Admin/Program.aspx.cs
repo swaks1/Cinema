@@ -103,17 +103,19 @@ namespace ITcinema.Admin
             try
             {
                 conn.Open();
+                Random r = new Random();
                 for (var dt = (DateTime)ViewState["start"]; dt <= (DateTime)ViewState["end"]; dt = dt.AddDays(1))
                 {
-                    string sqlSelect = "INSERT INTO Program (Id, Name, StartDate, EndDate, Time ) VALUES " +
-                        "(@Id, @Name, @StartDate, @EndDate, @Time) ";
+                    string sqlSelect = "INSERT INTO Program (Id, Name, StartDate, EndDate, Time, Seats ) VALUES " +
+                        "(@Id, @Name, @StartDate, @EndDate, @Time, @Seats) ";
                     SqlCommand command = new SqlCommand(sqlSelect, conn);
-                    Random r = new Random();
-                    command.Parameters.AddWithValue("@Id", r.Next(200, 300) + r.Next(100));
+                    command.Parameters.AddWithValue("@Id", r.Next(100, 300) + r.Next(100));
                     command.Parameters.AddWithValue("@Name", tbName.Text);
                     command.Parameters.AddWithValue("@StartDate", dt.ToString("dd.MM.yyyy"));
                     command.Parameters.AddWithValue("@EndDate", tbEnd.Text);
                     command.Parameters.AddWithValue("@Time", tbTime.Text);
+                    command.Parameters.AddWithValue("@Seats", "");
+
                     command.ExecuteNonQuery();
 
                 }
