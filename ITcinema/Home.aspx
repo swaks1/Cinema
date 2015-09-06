@@ -80,7 +80,7 @@
                     <asp:HyperLink ID="hlBook" runat="server" NavigateUrl="Bookticket.aspx"><i class="book"></i>Резервација</asp:HyperLink>
                     <p>Попуст до <strong>10%</strong> за сите членови!</p>
                 </div>
-                
+                <asp:Label ID="error" runat="server" Text=""></asp:Label>
                 <div class="clearfix"></div>
             </div>
 

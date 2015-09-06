@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,7 +15,7 @@ namespace ITcinema
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            iframe.Attributes.Add("src", "https://www.youtube.com/embed/2LqzF5WauAw");
+            randomVideo();
             if(!IsPostBack)
                 fillSlider();
         }
@@ -38,6 +39,37 @@ namespace ITcinema
             catch(Exception err)
             {
 
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void randomVideo()
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+            string sqlstring = "SELECT * FROM Movie";
+            SqlCommand komanda = new SqlCommand(sqlstring, conn);
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = komanda.ExecuteReader();
+                ArrayList filmovi = new ArrayList();
+                while(reader.Read())
+                {
+                    string url = reader["URL"].ToString();
+                    string videoID = url.Substring(url.IndexOf('=') + 1);
+                    filmovi.Add(videoID);
+                }
+                Random r = new Random();
+                iframe.Attributes.Add("src", "https://www.youtube.com/embed/" + filmovi[r.Next(filmovi.Count)]);
+                reader.Close();
+            }
+            catch (Exception err)
+            {
+                error.Text = err.ToString();
             }
             finally
             {
