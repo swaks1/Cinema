@@ -65,6 +65,7 @@
     <Content Include="Bookticket.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Print.aspx" />
     <Content Include="Program.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Web.config" />
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
     </Compile>
     <Compile Include="Program.aspx.cs">
       <DependentUpon>Program.aspx</DependentUpon>

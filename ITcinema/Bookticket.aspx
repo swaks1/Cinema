@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Cinema.Master" AutoEventWireup="true" CodeBehind="Bookticket.aspx.cs" Inherits="ITcinema.Bookticket" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Cinema.Master" AutoEventWireup="true" CodeBehind="Bookticket.aspx.cs" Inherits="ITcinema.Bookticket" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(window).load(function () {
@@ -9,6 +9,9 @@
                 //    $(this).removeClass("selected");
              //   $(".lbSelected").append($(this).attr('id') + ",");
             });
+            function printUrl() {
+                window.open('http://localhost:51364/Print.aspx', '_blank');
+            }
         });
     </script>
     <style type="text/css">
@@ -20,8 +23,8 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form id="form1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
+    <form id="form1" runat="server" class="min-heigth">
     <div class="clearfix"></div>
         <div class="clearfix"></div>
 
@@ -63,7 +66,7 @@
             &nbsp;</p>
         <p>
             &nbsp;</p>
-        <p>Избетере седишта</p>
+        <p>Избетере седишта за филмот <asp:Label ID="lbFilm" runat="server" Text=""></asp:Label>&nbsp; на ден <asp:Label ID="lbDen" runat="server" Text=""></asp:Label>&nbsp; во <asp:Label ID="lbCas" runat="server" Text=""></asp:Label>&nbsp; часот</p>
         
         <br />
         
@@ -81,266 +84,266 @@
                                 <asp:Button   ID="btn1_1" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button   ID="btn1_2" runat="server" Text=" " OnClick="btn1_2_Click" />
+                                <asp:Button   ID="btn1_2" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn1_3" runat="server" Text=" " OnClick="btn1_3_Click" />
+                                <asp:Button     ID="btn1_3" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td class="auto-style2">
-                                <asp:Button     ID="btn1_4" runat="server" Text=" " OnClick="btn1_4_Click" />
+                                <asp:Button     ID="btn1_4" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Button     ID="btn1_5" runat="server" Text=" " OnClick="btn1_5_Click" />
+                                <asp:Button     ID="btn1_5" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn1_6" runat="server" Text=" " OnClick="btn1_6_Click" />
+                                <asp:Button     ID="btn1_6" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn1_7" runat="server" Text=" " OnClick="btn1_7_Click" />
+                                <asp:Button     ID="btn1_7" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn1_8" runat="server" Text=" " OnClick="btn1_8_Click" />
+                                <asp:Button     ID="btn1_8" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn1_9" runat="server" Text=" " OnClick="btn1_9_Click" />
+                                <asp:Button     ID="btn1_9" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn1_10" runat="server" Text=" " OnClick="btn1_10_Click" />
+                                <asp:Button     ID="btn1_10" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Button     ID="btn2_1" runat="server" Text=" " OnClick="btn2_1_Click" />
+                                <asp:Button     ID="btn2_1" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn2_2" runat="server" Text=" " OnClick="btn2_2_Click" />
+                                <asp:Button     ID="btn2_2" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn2_3" runat="server" Text=" " OnClick="btn2_3_Click" />
+                                <asp:Button     ID="btn2_3" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td class="auto-style2">
-                                <asp:Button     ID="btn2_4" runat="server" Text=" " OnClick="btn2_4_Click" />
+                                <asp:Button     ID="btn2_4" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Button     ID="btn2_5" runat="server" Text=" " OnClick="btn2_5_Click" />
+                                <asp:Button     ID="btn2_5" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn2_6" runat="server" Text=" " OnClick="btn2_6_Click" />
+                                <asp:Button     ID="btn2_6" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn2_7" runat="server" Text=" " OnClick="btn2_7_Click" />
+                                <asp:Button     ID="btn2_7" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn2_8" runat="server" Text=" " OnClick="btn2_8_Click" />
+                                <asp:Button     ID="btn2_8" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn2_9" runat="server" Text=" " OnClick="btn2_9_Click" />
+                                <asp:Button     ID="btn2_9" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="btn2_10" runat="server" Text=" " OnClick="btn2_10_Click" />
+                                <asp:Button     ID="btn2_10" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Button     ID="Button50" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_1" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button22" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_2" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button21" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_3" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td class="auto-style2">
-                                <asp:Button     ID="Button33" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_4" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
                             </td>
                             <td>
-                                <asp:Button     ID="Button41" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_5" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button51" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_6" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button80" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_7" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button81" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_8" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button82" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_9" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button83" runat="server" Text=" " />
+                                <asp:Button     ID="btn3_10" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Button     ID="Button52" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_1" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button23" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_2" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button28" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_3" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td class="auto-style2">
-                                <asp:Button     ID="Button34" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_4" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>&nbsp;</td>
                             <td>
-                                <asp:Button     ID="Button44" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_5" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button53" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_6" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button64" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_7" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button65" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_8" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button66" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_9" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button67" runat="server" Text=" " />
+                                <asp:Button     ID="btn4_10" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Button     ID="Button14" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_1" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button24" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_2" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button29" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_3" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td class="auto-style2">
-                                <asp:Button     ID="Button35" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_4" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>&nbsp;</td>
                             <td>
-                                <asp:Button     ID="Button45" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_5" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button54" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_6" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button68" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_7" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button69" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_8" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button70" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_9" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button71" runat="server" Text=" " />
+                                <asp:Button     ID="btn5_10" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Button     ID="Button15" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_1" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button25" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_2" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button30" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_3" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td class="auto-style2">
-                                <asp:Button     ID="Button36" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_4" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>&nbsp;</td>
                             <td>
-                                <asp:Button     ID="Button46" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_5" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button55" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_6" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button72" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_7" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button73" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_8" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button74" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_9" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button75" runat="server" Text=" " />
+                                <asp:Button     ID="btn6_10" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Button     ID="Button16" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_1" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button26" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_2" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button31" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_3" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td class="auto-style2">
-                                <asp:Button     ID="Button37" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_4" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>&nbsp;</td>
                             <td>
-                                <asp:Button     ID="Button47" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_5" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button56" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_6" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button76" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_7" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button77" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_8" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button78" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_9" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button79" runat="server" Text=" " />
+                                <asp:Button     ID="btn7_10" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Button     ID="Button17" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_1" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button27" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_2" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button32" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_3" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td class="auto-style2">
-                                <asp:Button     ID="Button38" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_4" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>&nbsp;</td>
                             <td>
-                                <asp:Button     ID="Button48" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_5" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button57" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_6" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button12" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_7" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button13" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_8" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button58" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_9" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                             <td>
-                                <asp:Button     ID="Button59" runat="server" Text=" " />
+                                <asp:Button     ID="btn8_10" runat="server" Text=" " OnClick="btn1_1_Click" />
                             </td>
                         </tr>
                     </table>
@@ -393,8 +396,9 @@
                 <br />
                 Вкупно <asp:Label ID="lbTotal" runat="server" Text=""></asp:Label> денари.
                 <br />
-                Број на седишта: <asp:Label ID="lbSeats" runat="server" Text=""></asp:Label>
+                Cедишта:<br /> &nbsp;&nbsp;&nbsp;<asp:Label ID="lbSeats" runat="server" Text=""></asp:Label>
             </p>
+            <asp:Button ID="printButton" runat="server" Text="Print"  OnClientClick="window.open('http://localhost:51364/Print.aspx', '_blank');"  />
         </asp:Panel>
     </div>
     <div class="clearfix"></div>

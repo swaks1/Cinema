@@ -97,6 +97,32 @@ namespace ITcinema
             }
         }
 
+        protected void mkName(string name)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+            string sqlSelect = "SELECT * from Movie WHERE Name='" + name + "'";
+            SqlCommand command = new SqlCommand(sqlSelect, conn);
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    lbFilm.Text = reader["NameMk"].ToString();
+                }
+                reader.Close();
+            }
+            catch (Exception err)
+            {
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         protected void btnCekor2_Click(object sender, EventArgs e)
         {
             if (ddlMovie.SelectedIndex > 0 && ddlDate.SelectedIndex > 0 && (List<string>)ViewState["seats"] != null)
@@ -131,14 +157,24 @@ namespace ITcinema
                     for (int i = 0; i < tickets.Count; i++ )
                     {
                         tickets[i] = tickets[i].Replace("btn", "");
+                        tickets[i] = tickets[i].Replace("_", " ред, седиште ");
                     }
                     lbBrTiket.Text = tickets.Count.ToString();
                     lbTotal.Text = tickets.Count + " X 150 = " + tickets.Count * 150;
-                    lbSeats.Text = String.Join(", ", tickets);
+                    lbSeats.Text = String.Join(", <br/> &nbsp;&nbsp;&nbsp;", tickets);
                     confirm.Visible = true;
                     moviedate.Visible = false;
                     bookseats.Visible = false;
                 }
+                HttpCookie kolace = new HttpCookie("kolaceInfo");
+                kolace["film"] = lbFilm.Text;
+                kolace["data"] = lbDen.Text;
+                kolace["cas"] = lbCas.Text;
+                kolace["sedista"] = lbSeats.Text;
+                kolace["total"] = lbTotal.Text;
+                kolace.Expires = DateTime.Now.AddHours(1);
+                Response.Cookies.Add(kolace);
+
             }
             //Response.Redirect("Bookticket.aspx?error=selektirajdataifilm&Movie=" + ddlMovie.SelectedItem.Text + "&date=" + ddlDate.SelectedItem.Text.Split(' ')[0]);
 
@@ -149,6 +185,8 @@ namespace ITcinema
             if (ddlMovie.SelectedIndex <= 0)
                 btnCekor1.Enabled = false;
             fillDdlDate(ddlMovie.SelectedItem.Text);
+            if (ddlMovie.SelectedIndex > 0)
+                mkName(ddlMovie.SelectedItem.Text);
         }
 
         protected void ddlDate_SelectedIndexChanged(object sender, EventArgs e)
@@ -195,9 +233,9 @@ namespace ITcinema
             {
                 conn.Close();
             }
+            lbDen.Text = ddlDate.SelectedItem.Text.Split(' ')[0];
+            lbCas.Text = ddlDate.SelectedItem.Text.Split(' ')[1];
         }
-
-
 
         public void seatClick(Button btn)
         {
@@ -232,6 +270,7 @@ namespace ITcinema
         {
             bookseats.Visible = true;
             moviedate.Visible = false;
+
         }
 
         protected void btn1_1_Click(object sender, EventArgs e)
@@ -239,105 +278,13 @@ namespace ITcinema
             seatClick((Button)sender);
         }
 
-        protected void btn1_2_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn1_3_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn1_4_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn1_5_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn1_6_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn1_7_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn1_8_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn1_9_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn1_10_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_1_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_2_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_3_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_4_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_5_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_6_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_7_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_8_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_9_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
-
-        protected void btn2_10_Click(object sender, EventArgs e)
-        {
-            seatClick((Button)sender);
-        }
 
         protected void btnOtkazi_Click(object sender, EventArgs e)
         {
             Response.Redirect("Bookticket.aspx");
         }
+
+        
 
 
 

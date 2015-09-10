@@ -67,6 +67,33 @@ namespace ITcinema {
         protected global::System.Web.UI.WebControls.Panel bookseats;
         
         /// <summary>
+        /// lbFilm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbFilm;
+        
+        /// <summary>
+        /// lbDen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbDen;
+        
+        /// <summary>
+        /// lbCas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbCas;
+        
+        /// <summary>
         /// btn1_1 control.
         /// </summary>
         /// <remarks>
@@ -247,544 +274,544 @@ namespace ITcinema {
         protected global::System.Web.UI.WebControls.Button btn2_10;
         
         /// <summary>
-        /// Button50 control.
+        /// btn3_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button50;
+        protected global::System.Web.UI.WebControls.Button btn3_1;
         
         /// <summary>
-        /// Button22 control.
+        /// btn3_2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button22;
+        protected global::System.Web.UI.WebControls.Button btn3_2;
         
         /// <summary>
-        /// Button21 control.
+        /// btn3_3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button21;
+        protected global::System.Web.UI.WebControls.Button btn3_3;
         
         /// <summary>
-        /// Button33 control.
+        /// btn3_4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button33;
+        protected global::System.Web.UI.WebControls.Button btn3_4;
         
         /// <summary>
-        /// Button41 control.
+        /// btn3_5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button41;
+        protected global::System.Web.UI.WebControls.Button btn3_5;
         
         /// <summary>
-        /// Button51 control.
+        /// btn3_6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button51;
+        protected global::System.Web.UI.WebControls.Button btn3_6;
         
         /// <summary>
-        /// Button80 control.
+        /// btn3_7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button80;
+        protected global::System.Web.UI.WebControls.Button btn3_7;
         
         /// <summary>
-        /// Button81 control.
+        /// btn3_8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button81;
+        protected global::System.Web.UI.WebControls.Button btn3_8;
         
         /// <summary>
-        /// Button82 control.
+        /// btn3_9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button82;
+        protected global::System.Web.UI.WebControls.Button btn3_9;
         
         /// <summary>
-        /// Button83 control.
+        /// btn3_10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button83;
+        protected global::System.Web.UI.WebControls.Button btn3_10;
         
         /// <summary>
-        /// Button52 control.
+        /// btn4_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button52;
+        protected global::System.Web.UI.WebControls.Button btn4_1;
         
         /// <summary>
-        /// Button23 control.
+        /// btn4_2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button23;
+        protected global::System.Web.UI.WebControls.Button btn4_2;
         
         /// <summary>
-        /// Button28 control.
+        /// btn4_3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button28;
+        protected global::System.Web.UI.WebControls.Button btn4_3;
         
         /// <summary>
-        /// Button34 control.
+        /// btn4_4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button34;
+        protected global::System.Web.UI.WebControls.Button btn4_4;
         
         /// <summary>
-        /// Button44 control.
+        /// btn4_5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button44;
+        protected global::System.Web.UI.WebControls.Button btn4_5;
         
         /// <summary>
-        /// Button53 control.
+        /// btn4_6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button53;
+        protected global::System.Web.UI.WebControls.Button btn4_6;
         
         /// <summary>
-        /// Button64 control.
+        /// btn4_7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button64;
+        protected global::System.Web.UI.WebControls.Button btn4_7;
         
         /// <summary>
-        /// Button65 control.
+        /// btn4_8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button65;
+        protected global::System.Web.UI.WebControls.Button btn4_8;
         
         /// <summary>
-        /// Button66 control.
+        /// btn4_9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button66;
+        protected global::System.Web.UI.WebControls.Button btn4_9;
         
         /// <summary>
-        /// Button67 control.
+        /// btn4_10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button67;
+        protected global::System.Web.UI.WebControls.Button btn4_10;
         
         /// <summary>
-        /// Button14 control.
+        /// btn5_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button14;
+        protected global::System.Web.UI.WebControls.Button btn5_1;
         
         /// <summary>
-        /// Button24 control.
+        /// btn5_2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button24;
+        protected global::System.Web.UI.WebControls.Button btn5_2;
         
         /// <summary>
-        /// Button29 control.
+        /// btn5_3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button29;
+        protected global::System.Web.UI.WebControls.Button btn5_3;
         
         /// <summary>
-        /// Button35 control.
+        /// btn5_4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button35;
+        protected global::System.Web.UI.WebControls.Button btn5_4;
         
         /// <summary>
-        /// Button45 control.
+        /// btn5_5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button45;
+        protected global::System.Web.UI.WebControls.Button btn5_5;
         
         /// <summary>
-        /// Button54 control.
+        /// btn5_6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button54;
+        protected global::System.Web.UI.WebControls.Button btn5_6;
         
         /// <summary>
-        /// Button68 control.
+        /// btn5_7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button68;
+        protected global::System.Web.UI.WebControls.Button btn5_7;
         
         /// <summary>
-        /// Button69 control.
+        /// btn5_8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button69;
+        protected global::System.Web.UI.WebControls.Button btn5_8;
         
         /// <summary>
-        /// Button70 control.
+        /// btn5_9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button70;
+        protected global::System.Web.UI.WebControls.Button btn5_9;
         
         /// <summary>
-        /// Button71 control.
+        /// btn5_10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button71;
+        protected global::System.Web.UI.WebControls.Button btn5_10;
         
         /// <summary>
-        /// Button15 control.
+        /// btn6_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button15;
+        protected global::System.Web.UI.WebControls.Button btn6_1;
         
         /// <summary>
-        /// Button25 control.
+        /// btn6_2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button25;
+        protected global::System.Web.UI.WebControls.Button btn6_2;
         
         /// <summary>
-        /// Button30 control.
+        /// btn6_3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button30;
+        protected global::System.Web.UI.WebControls.Button btn6_3;
         
         /// <summary>
-        /// Button36 control.
+        /// btn6_4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button36;
+        protected global::System.Web.UI.WebControls.Button btn6_4;
         
         /// <summary>
-        /// Button46 control.
+        /// btn6_5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button46;
+        protected global::System.Web.UI.WebControls.Button btn6_5;
         
         /// <summary>
-        /// Button55 control.
+        /// btn6_6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button55;
+        protected global::System.Web.UI.WebControls.Button btn6_6;
         
         /// <summary>
-        /// Button72 control.
+        /// btn6_7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button72;
+        protected global::System.Web.UI.WebControls.Button btn6_7;
         
         /// <summary>
-        /// Button73 control.
+        /// btn6_8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button73;
+        protected global::System.Web.UI.WebControls.Button btn6_8;
         
         /// <summary>
-        /// Button74 control.
+        /// btn6_9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button74;
+        protected global::System.Web.UI.WebControls.Button btn6_9;
         
         /// <summary>
-        /// Button75 control.
+        /// btn6_10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button75;
+        protected global::System.Web.UI.WebControls.Button btn6_10;
         
         /// <summary>
-        /// Button16 control.
+        /// btn7_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button16;
+        protected global::System.Web.UI.WebControls.Button btn7_1;
         
         /// <summary>
-        /// Button26 control.
+        /// btn7_2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button26;
+        protected global::System.Web.UI.WebControls.Button btn7_2;
         
         /// <summary>
-        /// Button31 control.
+        /// btn7_3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button31;
+        protected global::System.Web.UI.WebControls.Button btn7_3;
         
         /// <summary>
-        /// Button37 control.
+        /// btn7_4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button37;
+        protected global::System.Web.UI.WebControls.Button btn7_4;
         
         /// <summary>
-        /// Button47 control.
+        /// btn7_5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button47;
+        protected global::System.Web.UI.WebControls.Button btn7_5;
         
         /// <summary>
-        /// Button56 control.
+        /// btn7_6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button56;
+        protected global::System.Web.UI.WebControls.Button btn7_6;
         
         /// <summary>
-        /// Button76 control.
+        /// btn7_7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button76;
+        protected global::System.Web.UI.WebControls.Button btn7_7;
         
         /// <summary>
-        /// Button77 control.
+        /// btn7_8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button77;
+        protected global::System.Web.UI.WebControls.Button btn7_8;
         
         /// <summary>
-        /// Button78 control.
+        /// btn7_9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button78;
+        protected global::System.Web.UI.WebControls.Button btn7_9;
         
         /// <summary>
-        /// Button79 control.
+        /// btn7_10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button79;
+        protected global::System.Web.UI.WebControls.Button btn7_10;
         
         /// <summary>
-        /// Button17 control.
+        /// btn8_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button17;
+        protected global::System.Web.UI.WebControls.Button btn8_1;
         
         /// <summary>
-        /// Button27 control.
+        /// btn8_2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button27;
+        protected global::System.Web.UI.WebControls.Button btn8_2;
         
         /// <summary>
-        /// Button32 control.
+        /// btn8_3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button32;
+        protected global::System.Web.UI.WebControls.Button btn8_3;
         
         /// <summary>
-        /// Button38 control.
+        /// btn8_4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button38;
+        protected global::System.Web.UI.WebControls.Button btn8_4;
         
         /// <summary>
-        /// Button48 control.
+        /// btn8_5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button48;
+        protected global::System.Web.UI.WebControls.Button btn8_5;
         
         /// <summary>
-        /// Button57 control.
+        /// btn8_6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button57;
+        protected global::System.Web.UI.WebControls.Button btn8_6;
         
         /// <summary>
-        /// Button12 control.
+        /// btn8_7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button12;
+        protected global::System.Web.UI.WebControls.Button btn8_7;
         
         /// <summary>
-        /// Button13 control.
+        /// btn8_8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button13;
+        protected global::System.Web.UI.WebControls.Button btn8_8;
         
         /// <summary>
-        /// Button58 control.
+        /// btn8_9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button58;
+        protected global::System.Web.UI.WebControls.Button btn8_9;
         
         /// <summary>
-        /// Button59 control.
+        /// btn8_10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button59;
+        protected global::System.Web.UI.WebControls.Button btn8_10;
         
         /// <summary>
         /// btnOtkazi control.
@@ -848,5 +875,14 @@ namespace ITcinema {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbSeats;
+        
+        /// <summary>
+        /// printButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button printButton;
     }
 }
