@@ -18,10 +18,10 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <div class="movie-pic">
-								<a href="#"><img src='<%#Eval("Image")%>' alt='<%#Eval("Name")%>' runat="server" /></a>
+								<a href='<%# "Details.aspx?name=" + Eval("Name")%>' runat="server"> <img src='<%#Eval("Image")%>' alt='<%#Eval("Name")%>' runat="server" /> </a>
 							</div>
 							<div class="review-info">
-								<a class="span" href="#"><%#Eval("NameMk") %></a>
+								<a class="span" href='<%# "Details.aspx?name=" + Eval("Name")%>' runat="server"><%#Eval("NameMk") %></a>
 								&nbsp;  
 								<div class="clearfix"></div>
 								<div class="clearfix"></div>

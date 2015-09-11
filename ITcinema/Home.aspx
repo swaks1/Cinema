@@ -34,7 +34,7 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <li>
-                                 <img src='<%#Eval("Image")%>' alt='<%#Eval("Name")%>' runat="server" />
+                                 <a  href='<%# "Details.aspx?name=" + Eval("Name")%>' runat="server"><img  src='<%#Eval("Image")%>' alt='<%#Eval("Name")%>' runat="server" /></a>
                             </li>
                         </ItemTemplate>
                         <EmptyDataTemplate>

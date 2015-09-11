@@ -14,7 +14,7 @@ namespace ITcinema
             HttpCookie kolace = Request.Cookies["kolaceInfo"];
             if (kolace != null)
             {
-                lblInfo.Text = kolace["film"] + kolace["cas"];
+                lblInfo.Text = kolace["film"].ToString() + kolace["cas"].ToString();
             }
             else
                 lblInfo.Text = "dasdasdasd";

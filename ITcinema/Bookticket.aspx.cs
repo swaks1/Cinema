@@ -65,6 +65,7 @@ namespace ITcinema
                 conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
                 string sqlSelect = "SELECT * from Program WHERE Name='" + movie + "'";
                 SqlCommand command = new SqlCommand(sqlSelect, conn);
+
                 try
                 {
                     conn.Open();
@@ -76,6 +77,7 @@ namespace ITcinema
                     {
                         if ((Convert.ToDateTime(reader["StartDate"].ToString()).CompareTo(DateTime.Today) >= 0))
                             listaDate.Add(reader["StartDate"].ToString() + " " + reader["Time"].ToString());
+                       
                     }
                     reader.Close();
                     ddlDate.DataSource = listaDate;
@@ -85,6 +87,7 @@ namespace ITcinema
                 }
                 catch (Exception err)
                 {
+                    error.Text = err.ToString();
                 }
                 finally
                 {
@@ -167,7 +170,8 @@ namespace ITcinema
                     bookseats.Visible = false;
                 }
                 HttpCookie kolace = new HttpCookie("kolaceInfo");
-                kolace["film"] = lbFilm.Text;
+               // kolace["film"] = lbFilm.Text;
+                kolace["film"] = "сккссккчч";
                 kolace["data"] = lbDen.Text;
                 kolace["cas"] = lbCas.Text;
                 kolace["sedista"] = lbSeats.Text;

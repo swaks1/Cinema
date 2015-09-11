@@ -11,8 +11,8 @@ namespace ITcinema.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["admin"] == null)
-            //    Response.Redirect("Login.aspx");
+            if (Session["admin"] == null)
+                Response.Redirect("Login.aspx");
             string name = Request.QueryString["name"];
             string start = Request.QueryString["start"];
             string time = Request.QueryString["time"];

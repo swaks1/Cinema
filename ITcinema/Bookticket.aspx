@@ -50,7 +50,7 @@
         </p>
         <asp:DropDownList ID="ddlDate" runat="server" CssClass="input" AutoPostBack="True" OnSelectedIndexChanged="ddlDate_SelectedIndexChanged">
         </asp:DropDownList>
-
+        <asp:Label ID="error" runat="server"></asp:Label>
         <br />
         <br />
         <br />
@@ -399,6 +399,7 @@
                 Cедишта:<br /> &nbsp;&nbsp;&nbsp;<asp:Label ID="lbSeats" runat="server" Text=""></asp:Label>
             </p>
             <asp:Button ID="printButton" runat="server" Text="Print"  OnClientClick="window.open('http://localhost:51364/Print.aspx', '_blank');"  />
+<%--            <button onclick='<%= "window.open('Print.aspx?film=" + lbFilm.Text%>' runat="server"></button>--%>
         </asp:Panel>
     </div>
     <div class="clearfix"></div>

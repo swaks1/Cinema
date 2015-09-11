@@ -14,8 +14,8 @@ namespace ITcinema.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["admin"] == null)
-            //    Response.Redirect("Login.aspx");
+            if (Session["admin"] == null)
+                Response.Redirect("Login.aspx");
             if (!IsPostBack)
                 FillList();
         }
@@ -58,40 +58,28 @@ namespace ITcinema.Admin
 
         public void selectMovie(string name)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-            string sqlSelect = "SELECT * FROM Movie WHERE Name='" + name + "'";
-            SqlCommand command = new SqlCommand(sqlSelect, conn);
+            WebServiceKino servis = new WebServiceKino();
+            WebServiceKino.Movie movie = servis.readMovie(name);
+            if (movie != null)
+            {
+                tbName.Text = movie.Name;
+                tbNameMk.Text = movie.NameMk;
+                tbDesctiption.Text = movie.Desctiption;
+                tbDirector.Text = movie.Director;
+                tbDuration.Text = movie.Duration;
+                tbGenre.Text = movie.Genre;
+                tbRating.Text = movie.Rating;
+                tbRelease.Text = movie.Release;
+                tbStars.Text = movie.Stars;
+                tbUrl.Text = movie.Url;
+                tbImage.ImageUrl = movie.Image;
+            }
+            else
+            {
+                lbErr.Text = "Error";
+            }
+                
 
-            try
-            {
-                conn.Open();
-                SqlDataReader read = command.ExecuteReader();
-                if (read.Read())
-                {
-                    tbName.Text = read["Name"].ToString();
-                    tbNameMk.Text = read["NameMk"].ToString();
-                    tbDesctiption.Text = read["Description"].ToString();
-                    tbDirector.Text = read["Director"].ToString();
-                    tbDuration.Text = read["Duration"].ToString();
-                    tbGenre.Text = read["Genre"].ToString();
-                    tbRating.Text = read["Rating"].ToString();
-                    tbRelease.Text = read["Release"].ToString();
-                    tbStars.Text = read["Stars"].ToString();
-                    tbUrl.Text = read["URL"].ToString();
-                    tbImage.ImageUrl = read["Image"].ToString();
-                    read.Close();
-                }
-
-            }
-            catch (Exception err)
-            {
-                lbErr.Text = err.ToString();
-            }
-            finally
-            {
-                conn.Close();
-            }
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)

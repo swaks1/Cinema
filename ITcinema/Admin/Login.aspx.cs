@@ -21,52 +21,16 @@ namespace ITcinema.Admin
             string user = tbUser.Text.Trim();
             string pass = tbPass.Text;
 
-            if (user.Length > 0 && pass.Length > 0)
+            WebServiceKino servis = new WebServiceKino();
+            string rez = servis.logIn(user, pass);
+            if (rez == "ok")
             {
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-                string sqlSelect = "SELECT Username, Password, IsAdmin  FROM Users WHERE Username='" + user + "'";
-                SqlCommand command = new SqlCommand(sqlSelect, conn);
-                try
-                {
-                    conn.Open();
-                    SqlDataReader read = command.ExecuteReader();
-                    if (read.Read())
-                    {
-                        if (read["IsAdmin"].ToString() == "True")
-                        {
-                            if (pass == read["Password"].ToString().TrimEnd())
-                            {
-                                Session["admin"] = user;
-                                Response.Redirect("Listall.aspx");
-                            }
-                            else
-                            {
-                                Label1.Text = "Invalid password";
-                            }
-                        }
-                        else
-                            Label1.Text = "Not an admin account";
-                        read.Close();
-                    }
-                    else
-                    {
-                        Label1.Text = "Invalid username!";
-                    }
-                }
-                catch (Exception err)
-                {
-                    Label1.Text = err.ToString();
-                }
-                finally
-                {
-                    conn.Close();
-                }
+                Session["admin"] = user;
+                Response.Redirect("Home.aspx");
             }
             else
-            {
-                Label1.Text = "Please insert username and password";
-            }
+                Label1.Text = rez;
+
         }
     }
 }
