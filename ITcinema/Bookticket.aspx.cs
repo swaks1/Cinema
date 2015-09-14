@@ -100,6 +100,7 @@ namespace ITcinema
             }
         }
 
+        //za servis moze
         protected void mkName(string name)
         {
             SqlConnection conn = new SqlConnection();
@@ -128,59 +129,62 @@ namespace ITcinema
 
         protected void btnCekor2_Click(object sender, EventArgs e)
         {
-            if (ddlMovie.SelectedIndex > 0 && ddlDate.SelectedIndex > 0 && (List<string>)ViewState["seats"] != null)
-            {
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-                string sqlSelect = "UPDATE Program SET Seats+=@Seats " +
-                    " WHERE Name=@Name AND StartDate=@StartDate";
-                SqlCommand command = new SqlCommand(sqlSelect, conn);
-                command.Parameters.AddWithValue("@Seats", "," + String.Join(",", (List<string>)ViewState["seats"]));
-                command.Parameters.AddWithValue("@Name", ddlMovie.SelectedItem.Text);
-                command.Parameters.AddWithValue("@StartDate", ddlDate.SelectedItem.Text.Split(' ')[0]);
+            if (ddlMovie.SelectedIndex > 0 && ddlDate.SelectedIndex > 0 && (List<string>)ViewState["seats"] != null )
+                {
+                    SqlConnection conn = new SqlConnection();
+                    conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+                    string sqlSelect = "UPDATE Program SET Seats+=@Seats " +
+                        " WHERE Name=@Name AND StartDate=@StartDate";
+                    SqlCommand command = new SqlCommand(sqlSelect, conn);
+                    command.Parameters.AddWithValue("@Seats", "," + String.Join(",", (List<string>)ViewState["seats"]));
+                    command.Parameters.AddWithValue("@Name", ddlMovie.SelectedItem.Text);
+                    command.Parameters.AddWithValue("@StartDate", ddlDate.SelectedItem.Text.Split(' ')[0]);
 
-                int efekt = 0;
-                try
-                {
-                    conn.Open();
-                    efekt = command.ExecuteNonQuery();
-
-                }
-                catch (Exception err)
-                {
-                    lbSelected.Text = err.ToString();
-                }
-                finally
-                {
-                    conn.Close();
-                }
-                if (efekt > 0)
-                {
-                    List<string> tickets = (List<string>)ViewState["seats"];
-                    for (int i = 0; i < tickets.Count; i++ )
+                    int efekt = 0;
+                    try
                     {
-                        tickets[i] = tickets[i].Replace("btn", "");
-                        tickets[i] = tickets[i].Replace("_", " ред, седиште ");
-                    }
-                    lbBrTiket.Text = tickets.Count.ToString();
-                    lbTotal.Text = tickets.Count + " X 150 = " + tickets.Count * 150;
-                    lbSeats.Text = String.Join(", <br/> &nbsp;&nbsp;&nbsp;", tickets);
-                    confirm.Visible = true;
-                    moviedate.Visible = false;
-                    bookseats.Visible = false;
-                }
-                HttpCookie kolace = new HttpCookie("kolaceInfo");
-               // kolace["film"] = lbFilm.Text;
-                kolace["film"] = "сккссккчч";
-                kolace["data"] = lbDen.Text;
-                kolace["cas"] = lbCas.Text;
-                kolace["sedista"] = lbSeats.Text;
-                kolace["total"] = lbTotal.Text;
-                kolace.Expires = DateTime.Now.AddHours(1);
-                Response.Cookies.Add(kolace);
+                        conn.Open();
+                        efekt = command.ExecuteNonQuery();
 
-            }
-            //Response.Redirect("Bookticket.aspx?error=selektirajdataifilm&Movie=" + ddlMovie.SelectedItem.Text + "&date=" + ddlDate.SelectedItem.Text.Split(' ')[0]);
+                    }
+                    catch (Exception err)
+                    {
+                        lbSelected.Text = err.ToString();
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                    if (efekt > 0)
+                    {
+                        List<string> tickets = (List<string>)ViewState["seats"];
+                        for (int i = 0; i < tickets.Count; i++)
+                        {
+                            tickets[i] = tickets[i].Replace("btn", "");
+                            tickets[i] = tickets[i].Replace("_", " ред, седиште ");
+                        }
+                        lbBrTiket.Text = tickets.Count.ToString();
+                        lbTotal.Text = tickets.Count + " X 150 = " + tickets.Count * 150;
+                        lbSeats.Text = String.Join(", <br/> &nbsp;&nbsp;&nbsp;", tickets);
+                        confirm.Visible = true;
+                        moviedate.Visible = false;
+                        bookseats.Visible = false;
+
+                        WebServiceKino servis = new WebServiceKino();
+                        lblId.Text = servis.insertReservation((string)Session["user"], ddlMovie.SelectedItem.Text, ddlDate.SelectedItem.Text.Split(' ')[0],
+                            ddlDate.SelectedItem.Text.Split(' ')[1], String.Join("/ ", tickets));
+                    }
+                    HttpCookie kolace = new HttpCookie("kolaceInfo");
+                    kolace["film"] = lbFilm.Text;
+                    kolace["data"] = lbDen.Text;
+                    kolace["cas"] = lbCas.Text;
+                    kolace["sedista"] = lbSeats.Text.Replace("<br/> &nbsp;&nbsp;&nbsp;", "/");
+                    kolace["total"] = lbTotal.Text;
+                    kolace.Expires = DateTime.Now.AddHours(1);
+                    Response.Cookies.Add(kolace);
+                    
+                }
+            
 
         }
 
@@ -272,8 +276,14 @@ namespace ITcinema
 
         protected void btnCekor1_Click(object sender, EventArgs e)
         {
-            bookseats.Visible = true;
-            moviedate.Visible = false;
+            if (Session["user"] != null)
+            {
+                bookseats.Visible = true;
+                moviedate.Visible = false;
+            }
+            else
+                error.Text = "Ве молиме да се најавите, за да можете да резервирате билети";
+
 
         }
 
@@ -281,7 +291,6 @@ namespace ITcinema
         {
             seatClick((Button)sender);
         }
-
 
         protected void btnOtkazi_Click(object sender, EventArgs e)
         {

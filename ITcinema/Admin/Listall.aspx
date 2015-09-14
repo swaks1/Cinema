@@ -13,11 +13,11 @@
             width: 655px;
         }
         .auto-style8 {
-            width: 265px;
+            width: 123px;
             text-align: left;
         }
         .auto-style9 {
-            width: 341px;
+            width: 292px;
         }
     </style>
 </head>
@@ -30,7 +30,11 @@
                 <td>
                     <table class="auto-style1">
                         <tr>
-                             <td class="auto-style5">&nbsp;</td>
+                             <td class="auto-style5">
+                                 <div class="logo">
+					                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Home.aspx"><img src="../images/logoo.png" alt=""/></asp:HyperLink>
+				                </div>
+                             </td>
                             <td class="auto-style9">Cinema admin</td>
                             <td class="auto-style8">
                                 <asp:LinkButton ID="home" runat="server" OnClick="home_Click">Home</asp:LinkButton>

@@ -13,15 +13,6 @@ namespace ITcinema {
     public partial class Bookticket {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// moviedate control.
         /// </summary>
         /// <remarks>
@@ -886,12 +877,12 @@ namespace ITcinema {
         protected global::System.Web.UI.WebControls.Label lbSeats;
         
         /// <summary>
-        /// printButton control.
+        /// lblId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button printButton;
+        protected global::System.Web.UI.WebControls.Label lblId;
     }
 }

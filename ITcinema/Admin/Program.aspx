@@ -16,6 +16,12 @@
         .auto-style3 {
             width: 347px;
         }
+        .logo {
+            width: 297px;
+        }
+        .auto-style4 {
+            width: 305px;
+        }
         </style>
 </head>
 <body>
@@ -26,7 +32,11 @@
                 <td>
                     <table class="auto-style1">
                         <tr>
-                            <td class="auto-style5">&nbsp;</td>
+                            <td class="auto-style4">
+                                <div class="logo">
+					            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Home.aspx"><img src="../images/logoo.png" alt=""/></asp:HyperLink>
+				            </div>
+                            </td>
                             <td class="auto-style8">Cinema admin</td>
                             <td class="auto-style5">
                                 <asp:LinkButton ID="home" runat="server" OnClick="home_Click" CausesValidation="False"  >Home</asp:LinkButton>

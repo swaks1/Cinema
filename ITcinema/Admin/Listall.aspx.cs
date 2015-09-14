@@ -82,6 +82,21 @@ namespace ITcinema.Admin
 
         }
 
+        public void clear()
+        {
+            tbName.Text = "";
+            tbNameMk.Text = "";
+            tbDesctiption.Text = "";
+            tbDirector.Text = "";
+            tbDuration.Text = "";
+            tbGenre.Text = "";
+            tbRating.Text = "";
+            tbRelease.Text = "";
+            tbStars.Text = "";
+            tbUrl.Text = "";
+            tbImage.ImageUrl = "";
+        }
+
         protected void btnUpload_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
@@ -192,11 +207,17 @@ namespace ITcinema.Admin
                 SqlCommand command2 = new SqlCommand(sqlProgram, conn);
                 command2.Parameters.AddWithValue("@Name", ListBox1.SelectedItem.Text);
 
+                string sqlReservation = "DELETE FROM Reservation WHERE Movie=@Movie";
+                SqlCommand command3 = new SqlCommand(sqlReservation, conn);
+                command3.Parameters.AddWithValue("@Movie", ListBox1.SelectedItem.Text);
+
                 try
                 {
                     conn.Open();
                     command2.ExecuteNonQuery();
                     command.ExecuteNonQuery();
+                    command3.ExecuteNonQuery();
+                    clear();
                 }
                 catch (Exception err)
                 {

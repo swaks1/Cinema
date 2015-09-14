@@ -5,8 +5,8 @@
     <div class="contact-content">
         <div class="main-contact">
 		    <h3 class="head">РЕГИСТРИРАЈ СЕ</h3>
-		    <div class="contact-form">
-			    <form id="form2" runat="server">
+		    <div class="contact-form min-heigth">
+             <div class="form">
 				    <div class="col-md-6 contact-left">
                         <asp:TextBox ID="tbName" runat="server" placeholder="Име"></asp:TextBox><asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Внесете го вашето име" ControlToValidate="tbName" ForeColor="Maroon"></asp:RequiredFieldValidator>
                         <asp:TextBox ID="tbLastName" runat="server" placeholder="Презиме"></asp:TextBox><asp:RequiredFieldValidator ID="rfvLastName" runat="server" ErrorMessage="Внесете го вашето презиме" ControlToValidate="tbLastName" ForeColor="Maroon"></asp:RequiredFieldValidator>
@@ -14,13 +14,15 @@
                         <asp:TextBox ID="tbEmail" runat="server" placeholder="Е-адреса"></asp:TextBox><asp:RequiredFieldValidator ID="rfvEmail" runat="server" ErrorMessage="Внесете ја вашата е-адреса" ControlToValidate="tbEmail" ForeColor="Maroon"></asp:RequiredFieldValidator>
                         <asp:TextBox ID="tbPassword" runat="server" placeholder="Лозинка"></asp:TextBox><asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="Внесете лозинка" ControlToValidate="tbPassword" ForeColor="Maroon"></asp:RequiredFieldValidator>
                         <asp:TextBox ID="tbRePassword" runat="server" placeholder="Потврдете ја вашата лозинка"></asp:TextBox><asp:CompareValidator ID="cvPassword" runat="server" ErrorMessage="Лозинките не се софпаѓаат" ControlToCompare="tbPassword" ControlToValidate="tbRePassword" ForeColor="Maroon"></asp:CompareValidator>
+                        </br>
+                        </br>
                         <asp:Button ID="btnRegistration" class="btn" runat="server" Text="Регистрација" OnClick="btnRegistration_Click" />
 
 				        <asp:Label ID="lblErrMessage" runat="server" ForeColor="Maroon" Text="Не успешна регистрација!" Visible="False"></asp:Label>
 
 				    </div>
 				 <div class="clearfix"></div>
-			 </form>
+			 </div>
 	     </div>
 			
 	 </div>

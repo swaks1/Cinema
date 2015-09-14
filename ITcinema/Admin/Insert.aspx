@@ -9,8 +9,17 @@
         .auto-style1 {
             width: 790px;
         }
-        .auto-style2 {
-            width: 712px;
+        .auto-style3 {
+            width: 398px;
+        }
+        .auto-style4 {
+            width: 302px;
+        }
+        .auto-style5 {
+            width: 236px;
+        }
+        .auto-style6 {
+            width: 667px;
         }
     </style>
 </head>
@@ -22,8 +31,12 @@
                 <td>
                     <table class="auto-style1">
                         <tr>
-                             <td class="auto-style5">&nbsp;</td>
-                            <td class="auto-style8">Cinema admin</td>
+                             <td class="auto-style4">
+                                 <div class="logo">
+					                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Home.aspx"><img src="../images/logoo.png" alt=""/></asp:HyperLink>
+				                </div>
+                             </td>
+                            <td class="auto-style6">Cinema admin</td>
                             <td class="auto-style5">
                                 <asp:LinkButton ID="home" runat="server" OnClick="home_Click" CausesValidation="False"  >Home</asp:LinkButton>
                             </td>

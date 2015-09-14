@@ -10,7 +10,7 @@
             width: 792px;
         }
         .auto-style2 {
-            width: 699px;
+            width: 424px;
         }
     </style>
 </head>
@@ -22,7 +22,10 @@
                 <td>
                     <table class="auto-style1">
                         <tr>
-                            <td>&nbsp;</td>
+                            <td><div class="logo">
+					            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Home.aspx"><img src="../images/logoo.png" alt=""/></asp:HyperLink>
+				            </div>
+                            </td>
                             <td class="auto-style2">Cinema admin</td>
                             <td>
                                 <asp:LinkButton ID="logOut" runat="server" OnClick="logOut_Click">Log out</asp:LinkButton>

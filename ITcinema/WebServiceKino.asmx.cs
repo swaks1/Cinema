@@ -23,8 +23,8 @@ namespace ITcinema
 
         }
 
-        [WebMethod(Description="Vraka ok ako e uspesno logiranjeto , ako ne e vraka poraka so greskata")]
-        public string logIn(string user, string pass)
+        [WebMethod(Description="za admin user-Vraka ok ako e uspesno logiranjeto , ako ne e vraka poraka so greskata")]
+        public string logInAdmin(string user, string pass)
         {
             if (user.Length > 0 && pass.Length > 0)
             {
@@ -74,6 +74,52 @@ namespace ITcinema
             else
             {
                 return "Please insert username and password";
+            }
+        }
+
+        [WebMethod(Description = "za obicen user-Vraka ok ako e uspesno logiranjeto , ako ne e vraka poraka so greskata")]
+        public string logIn(string user, string pass)
+        {
+            if (user.Length > 0 && pass.Length > 0)
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+                string sqlSelect = "SELECT Username, Password  FROM Users WHERE Username='" + user + "'";
+                SqlCommand command = new SqlCommand(sqlSelect, conn);
+                try
+                {
+                    conn.Open();
+                    SqlDataReader read = command.ExecuteReader();
+                    if (read.Read())
+                    {
+                        if (pass == read["Password"].ToString().TrimEnd())
+                        {
+                            read.Close();
+                            return "ok";
+                        }
+                        else
+                        {
+                            read.Close();
+                            return "Погрешена лозинка";
+                        }
+                    }
+                    else
+                    {
+                        return "Погрешено корисничко име";
+                    }
+                }
+                catch (Exception err)
+                {
+                    return err.ToString();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            else
+            {
+                return "Внесете име и лозинка";
             }
         }
 
@@ -132,6 +178,39 @@ namespace ITcinema
             {
                 conn.Close();
             }
+        }
+
+        [WebMethod(Description="se zapisuvaat rezervaciite od site korisnici so ID")]
+        public string insertReservation(string username,string movie, string date, string time, string seats)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+            string sqlSelect = "INSERT INTO Reservation (Id, Username, Movie, Date, Time, Tickets)" +
+                "  VALUES (@Id, @Username, @Movie, @Date, @Time, @Tickets)";
+            SqlCommand command = new SqlCommand(sqlSelect, conn);
+            Random r = new Random();
+            int id = r.Next(100000);
+            command.Parameters.AddWithValue("@Id", id);
+            command.Parameters.AddWithValue("@Username", username);
+            command.Parameters.AddWithValue("@Movie", movie);
+            command.Parameters.AddWithValue("@Date", date);
+            command.Parameters.AddWithValue("@Time", time);
+            command.Parameters.AddWithValue("@Tickets", seats);
+            try
+            {
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                return err.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return id.ToString();
+
         }
     }
 }

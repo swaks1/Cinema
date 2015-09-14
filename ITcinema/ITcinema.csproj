@@ -66,6 +66,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="Details.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="LogIn.aspx" />
     <Content Include="Print.aspx" />
     <Content Include="Program.aspx" />
     <Content Include="Registration.aspx" />
@@ -142,6 +143,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Print.aspx.cs">
       <DependentUpon>Print.aspx</DependentUpon>

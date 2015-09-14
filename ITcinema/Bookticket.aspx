@@ -4,11 +4,6 @@
         $(window).load(function () {
             $("#hlBooking").addClass("active");
 
-            $(".seats table input").click(function () {
-                //if($(this).hasClass("selected"))
-                //    $(this).removeClass("selected");
-             //   $(".lbSelected").append($(this).attr('id') + ",");
-            });
             function printUrl() {
                 window.open('http://localhost:51364/Print.aspx', '_blank');
             }
@@ -24,7 +19,6 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
-    <form id="form1" runat="server" class="min-heigth">
     <div class="clearfix"></div>
         <div class="clearfix"></div>
 
@@ -32,7 +26,7 @@
         <h3 class="head">РЕЗЕРВАЦИЈА</h3>
         <br />
         <br />
-    <asp:Panel ID="moviedate" runat="server">
+    <asp:Panel ID="moviedate" runat="server" CssClass="min-heigth">
         <h3>Чекор 1 /3</h3>
         <p>
             &nbsp;</p>
@@ -50,9 +44,9 @@
         </p>
         <asp:DropDownList ID="ddlDate" runat="server" CssClass="input" AutoPostBack="True" OnSelectedIndexChanged="ddlDate_SelectedIndexChanged">
         </asp:DropDownList>
-        <asp:Label ID="error" runat="server"></asp:Label>
         <br />
         <br />
+        <asp:Label ID="error" runat="server" ForeColor="Maroon"></asp:Label>
         <br />
         <br />
         <br />
@@ -60,13 +54,13 @@
 
     </asp:Panel>
 
-    <asp:Panel ID="bookseats" runat="server" Visible="False">
+    <asp:Panel ID="bookseats" runat="server" Visible="False" CssClass="min-heigth">
         <h3>Чекор 2 /3</h3>
         <p>
             &nbsp;</p>
         <p>
             &nbsp;</p>
-        <p>Избетере седишта за филмот <asp:Label ID="lbFilm" runat="server" Text=""></asp:Label>&nbsp; на ден <asp:Label ID="lbDen" runat="server" Text=""></asp:Label>&nbsp; во <asp:Label ID="lbCas" runat="server" Text=""></asp:Label>&nbsp; часот</p>
+        <p>Избетере седишта за филмот <asp:Label ID="lbFilm" runat="server" Text="" Font-Bold="True"></asp:Label>&nbsp; на ден <asp:Label ID="lbDen" runat="server" Text="" Font-Bold="True"></asp:Label>&nbsp; во <asp:Label ID="lbCas" runat="server" Text="" Font-Bold="True"></asp:Label>&nbsp; часот</p>
         
         <br />
         
@@ -385,21 +379,25 @@
                             
     </asp:Panel>
 
-        <asp:Panel ID="confirm" runat="server" Visible="false">
+        <asp:Panel ID="confirm" runat="server" Visible="false" CssClass="min-heigth">
             <h3>Чекор 3 /3</h3>
             <p>
                 &nbsp;</p>
             <p>
                 &nbsp;</p>
             <p>
-                Имате избрано <asp:Label ID="lbBrTiket" runat="server" Text=""></asp:Label> 
+                Имате избрано <asp:Label ID="lbBrTiket" runat="server" Text=""></asp:Label> билети.
                 <br />
                 Вкупно <asp:Label ID="lbTotal" runat="server" Text=""></asp:Label> денари.
                 <br />
-                Cедишта:<br /> &nbsp;&nbsp;&nbsp;<asp:Label ID="lbSeats" runat="server" Text=""></asp:Label>
+                Избрани билети:<br /> &nbsp;&nbsp;&nbsp;<asp:Label ID="lbSeats" runat="server" Text=""></asp:Label>
             </p>
-            <asp:Button ID="printButton" runat="server" Text="Print"  OnClientClick="window.open('http://localhost:51364/Print.aspx', '_blank');"  />
-<%--            <button onclick='<%= "window.open('Print.aspx?film=" + lbFilm.Text%>' runat="server"></button>--%>
+            <br />
+            <br />
+            Бројот на вашата резервација е : <asp:Label ID="lblId" runat="server"></asp:Label><br />
+            Билетите се резервирани за Вас до 30 минути пред почетокот на филмот.<br />
+            Ве молиме испечатете ја вашата потврда за резервација.<br />
+            <button class="steps-btn" onclick=<%= string.Concat("window.open('Print.aspx?id=" , lblId.Text , "','_blank');") %> >Испечати</button>
         </asp:Panel>
     </div>
     <div class="clearfix"></div>
@@ -407,5 +405,4 @@
     <div class="clearfix"></div>
     <div class="clearfix"></div>
 
-    </form>
 </asp:Content>

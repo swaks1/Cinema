@@ -14,10 +14,14 @@ namespace ITcinema
             HttpCookie kolace = Request.Cookies["kolaceInfo"];
             if (kolace != null)
             {
-                lblInfo.Text = kolace["film"].ToString() + kolace["cas"].ToString();
+                lblFilm.Text = kolace["film"].ToString();
+                lblCas.Text = kolace["cas"].ToString();
+                lblDen.Text = kolace["data"].ToString();
+                lblBileti.Text = kolace["sedista"].ToString().Replace("/", "<br/> ");
+                lblId.Text = Request.QueryString["id"];
             }
             else
-                lblInfo.Text = "dasdasdasd";
+                lblIme.Text = "nema nikakvi informacii";
         }
     }
 }

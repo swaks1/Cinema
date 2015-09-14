@@ -22,7 +22,7 @@ namespace ITcinema.Admin
             string pass = tbPass.Text;
 
             WebServiceKino servis = new WebServiceKino();
-            string rez = servis.logIn(user, pass);
+            string rez = servis.logInAdmin(user, pass);
             if (rez == "ok")
             {
                 Session["admin"] = user;

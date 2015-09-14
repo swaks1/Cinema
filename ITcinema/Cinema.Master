@@ -23,7 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </asp:ContentPlaceHolder>
 </head>
 <body>
-<%--    <form id="form1" runat="server">--%>
+    <form id="form1" runat="server">
         <div class="full">
             <div class="menu">
                 <ul>
@@ -40,16 +40,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="Home.aspx"><img src="images/logoo.png" alt=""/></asp:HyperLink>
 					<p>Movie Theater</p>
 				</div>
-                    <div class="search v-search" style="border: none; margin-left: 35px;width: 136px;">
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Registration.aspx">Регистрација</asp:HyperLink>
+                    <div  class="search v-search" style="border: none; margin-left: 35px;width: 250px;">
+                        <asp:HyperLink ID="hlRegistration" runat="server" NavigateUrl="Registration.aspx">Регистрација</asp:HyperLink>
+                        <asp:Label ID="lblCrtka" runat="server">&nbsp;&nbsp;| &nbsp;&nbsp;</asp:Label> 
+                        <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="LogIn.aspx">Најави се</asp:HyperLink>
+                        <asp:LinkButton ID="lbLogOut" runat="server" Visible="false" OnClick="lbLogOut_Click">Одјави се</asp:LinkButton>
                     </div>
-				<div class="search v-search">
-						<input runat="server" type="text" value="Пребарај.." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search..';}"/>
-						<input type="submit" value=""/>
-				</div>
+				
 				<div class="clearfix"></div>
 			</div>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"  >
                     </asp:ContentPlaceHolder>
 
                 <div class="clearfix"></div>
@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="clearfix"></div>
-<%--    </form>--%>
+    </form>
 </body>
 </html>
 

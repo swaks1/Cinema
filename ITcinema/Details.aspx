@@ -4,10 +4,16 @@
         .auto-style1 {
             height: 22px;
         }
+    .auto-style2 {
+        width: 136px;
+    }
+    .auto-style3 {
+        height: 22px;
+        width: 136px;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <form id="form1" runat="server">
         <div class="clearfix"></div>
  
  
@@ -28,55 +34,55 @@
         <br>
         <div id="main">
         <div id="main1">
-        <asp:Image ID="Image1" runat="server" Height="300px" Width="25%" style="float:left"/>
+        <asp:Image ID="Image1" runat="server" style="float:left" class="img-responsive"/>
         </div>
         <div id="main2" style="float:left;margin-bottom:20px;padding-left:20px">
        <asp:Label ID="lbDescription" runat="server" Height="70px" TextMode="MultiLine" Width="412px" float="right" ReadOnly="True" Font-Italic="True" Font-Bold="True"></asp:Label>
  
         <table class="auto-style1" class="info">
         <tr>
-            <td class="auto-style3">Name:</td>
+            <td class="auto-style2">име:</td>
             <td>
                 <asp:Label ID="lbName" runat="server" Width="160px" style="margin-bottom:5px" Font-Bold="True" Font-Size="Medium" Font-Underline="True"></asp:Label>          
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">Duration:</td>
+            <td class="auto-style3">времетраење:</td>
             <td class="auto-style1">
                 <asp:Label ID="lbDuration" runat="server" Width="160px" style="margin-bottom:5px" Font-Bold="True" Font-Underline="True"></asp:Label>
                
             </td>
         </tr>
         <tr>
-            <td class="auto-style3">Genre:</td>
+            <td class="auto-style3">жанр:</td>
             <td>
                 <asp:Label ID="lbGenre" runat="server" Width="160px" style="margin-bottom:5px" Font-Bold="True" Font-Size="Medium" Font-Underline="True"></asp:Label>
                
             </td>
         </tr>
         <tr>
-            <td class="auto-style3">Rating:</td>
+            <td class="auto-style3">рејтинг:</td>
             <td>
                 <asp:Label ID="lbRating" runat="server" Width="160px" style="margin-bottom:5px" Font-Bold="True" Font-Size="Medium" Font-Underline="True"></asp:Label>
                
             </td>
         </tr>
         <tr>
-            <td class="auto-style3">Stars:</td>
+            <td class="auto-style3">улоги:</td>
             <td>
                 <asp:Label ID="lbStars" runat="server" Width="160px" style="margin-bottom:5px" Font-Bold="True" Font-Size="Medium" Font-Underline="True"></asp:Label>
                
             </td>
         </tr>
         <tr>
-            <td class="auto-style3">Director:</td>
+            <td class="auto-style3">режија:</td>
             <td>
                 <asp:Label ID="lbDirector" runat="server" Width="160px" style="margin-bottom:5px" Font-Bold="True" Font-Size="Medium" Font-Underline="True"></asp:Label>
              
             </td>
         </tr>
         <tr>
-            <td class="auto-style3">Release:</td>
+            <td class="auto-style3">премиера:</td>
             <td>
                 <asp:Label ID="lbRelease" runat="server" Width="160px" style="margin-bottom:5px" Font-Bold="True" Font-Size="Medium" Font-Underline="True"></asp:Label>
                
@@ -97,7 +103,6 @@
  
  
        
-        </form>
         <div class="clearfix"></div>
             <div class="clearfix"></div>
         <div class="clearfix"></div>
