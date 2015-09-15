@@ -70,38 +70,38 @@ namespace ITcinema
                 rblAnswers49.SelectedValue == "true" ||
                 rblAnswers50.SelectedValue == "true")
             {
-                if (Session["poeni"] == null)
+                if (ViewState["poeni"] == null)
                 {
                     poeni = 10;
-                    Session["poeni"] = poeni;
+                    ViewState["poeni"] = poeni;
                 }
                 else
                 {
-                    poeni = (int)Session["poeni"];
+                    poeni = (int)ViewState["poeni"];
                     poeni += 10;
-                    Session["poeni"] = poeni;
+                    ViewState["poeni"] = poeni;
                 }
-                lblPoeni.Text = "Имате освоено: " + (int)Session["poeni"] + " поени.";
+                lblPoeni.Text = "Имате освоено: " + (int)ViewState["poeni"] + " поени.";
                 Clear();
             }
-            if (Session["sledni"] == null)
+            if (ViewState["sledni"] == null)
             {
                 sledni = 1;
-                Session["sledni"] = sledni;
+                ViewState["sledni"] = sledni;
             }
             else
             {
-                sledni = (int)Session["sledni"];
+                sledni = (int)ViewState["sledni"];
                 sledni += 1;
-                Session["sledni"] = sledni;
+                ViewState["sledni"] = sledni;
             }
-            if ((int)Session["sledni"] == 10)
+            if ((int)ViewState["sledni"] == 10)
             {
                 mvQuiz.Visible = false;
                 btnNext.Visible = false;
                 odPocetok.Visible = true;
-                lblPoeni.Text = "Играта заврши! Имате освоено: " + (int)Session["poeni"] + " поени.";
-                /* if((int)Session["poeni"] >= 70)
+                lblPoeni.Text = "Играта заврши! Имате освоено: " + (int)ViewState["poeni"] + " поени.";
+                /* if((int)ViewState["poeni"] >= 70)
                  {
                      lblPoeni.Text += " Имате освоени два гратис тикети.";
                  }*/
@@ -110,8 +110,8 @@ namespace ITcinema
 
         protected void odPocetok_Click(object sender, EventArgs e)
         {
-            Session["poeni"] = null;
-            Session["sledni"] = null;
+            ViewState["poeni"] = null;
+            ViewState["sledni"] = null;
             btnNext.Visible = true;
             lblPoeni.Text = "Имате освоено: 0 поени.";
             odPocetok.Visible = false;

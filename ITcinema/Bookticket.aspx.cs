@@ -104,28 +104,8 @@ namespace ITcinema
 
         protected void mkName(string name)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
-            string sqlSelect = "SELECT * from Movie WHERE Name='" + name + "'";
-            SqlCommand command = new SqlCommand(sqlSelect, conn);
-            try
-            {
-                conn.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    lbFilm.Text = reader["NameMk"].ToString();
-                }
-                reader.Close();
-            }
-            catch (Exception err)
-            {
-            }
-            finally
-            {
-                conn.Close();
-            }
+            WebServiceKino service = new WebServiceKino();
+            lbFilm.Text = service.mkName(name);
         }
 
         protected void btnCekor2_Click(object sender, EventArgs e)

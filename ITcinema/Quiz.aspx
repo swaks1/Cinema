@@ -8,7 +8,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" Visible="False">
-    <div style="padding:10%;">
+    <div style="padding:10%;" class="min-heigth">
     <asp:MultiView ID="mvQuiz" runat="server">
         <asp:View ID="View1" runat="server">
             <asp:Label ID="Label" runat="server" Text="Кој актер го глуми Капетан Џек Спероу во филомот Пиратите од Карибите?"></asp:Label>
@@ -407,6 +407,6 @@
     </asp:MultiView>
     <br /><br />
     <asp:Button ID="btnNext" runat="server" Text="Следно >>" CssClass="steps-btn" OnClick="btnNext_Click" /> &nbsp; &nbsp; &nbsp;
-    <asp:Label ID="lblPoeni" runat="server" Text="Имате освоено: 0 поени." Visible="True"></asp:Label><asp:Button ID="odPocetok" runat="server" Text="Почни од почеток!" style="float:right;margin-right:10%" OnClick="odPocetok_Click" Visible="False"/>
+    <asp:Label ID="lblPoeni" runat="server" Text="Имате освоено: 0 поени." Visible="True"></asp:Label><asp:Button ID="odPocetok" runat="server" CssClass="steps-btn" Text="Почни од почеток!" style="float:right;margin-right:10%" OnClick="odPocetok_Click" Visible="False"/>
     </div>
 </asp:Content>
