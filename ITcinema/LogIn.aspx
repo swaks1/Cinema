@@ -9,7 +9,7 @@
                 <div class="form">
 				    <div class="col-md-6 contact-left">
                         <asp:TextBox ID="tbUserName" runat="server" placeholder="Корисничко име"></asp:TextBox><asp:RequiredFieldValidator ID="rfvUserName" runat="server" ErrorMessage="Внесете го вашето корисничко име" ControlToValidate="tbUserName" ForeColor="Maroon"></asp:RequiredFieldValidator>
-                        <asp:TextBox ID="tbPassword" runat="server" placeholder="Лозинка"></asp:TextBox><asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="Внесете лозинка" ControlToValidate="tbPassword" ForeColor="Maroon"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="tbPassword" runat="server" placeholder="Лозинка" TextMode="Password"></asp:TextBox><asp:RequiredFieldValidator ID="rfvPassword" runat="server" ErrorMessage="Внесете лозинка" ControlToValidate="tbPassword" ForeColor="Maroon"></asp:RequiredFieldValidator>
                         </br>
 				        <asp:Label ID="lblErrMessage" runat="server" ForeColor="Maroon"></asp:Label>
                         </br>

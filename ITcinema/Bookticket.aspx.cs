@@ -75,8 +75,10 @@ namespace ITcinema
 
                     while (reader.Read())
                     {
-                        if ((Convert.ToDateTime(reader["StartDate"].ToString()).CompareTo(DateTime.Today) >= 0))
+                        if (Convert.ToDateTime(reader["StartDate"].ToString()).CompareTo(DateTime.Today) >= 0 )
                             listaDate.Add(reader["StartDate"].ToString() + " " + reader["Time"].ToString());
+                        if (listaDate.Count > 6)
+                            break;
                        
                     }
                     reader.Close();
@@ -100,7 +102,6 @@ namespace ITcinema
             }
         }
 
-        //za servis moze
         protected void mkName(string name)
         {
             SqlConnection conn = new SqlConnection();

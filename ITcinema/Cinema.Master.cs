@@ -27,6 +27,7 @@ namespace ITcinema
             lblCrtka.Visible = true;
             hlRegistration.Visible = true;
             lbLogOut.Visible = false;
+            Response.Redirect("Home.aspx");
         }
     }
 }

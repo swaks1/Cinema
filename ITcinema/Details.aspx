@@ -39,7 +39,7 @@
         <div id="main2" style="float:left;margin-bottom:20px;padding-left:20px">
        <asp:Label ID="lbDescription" runat="server" Height="70px" TextMode="MultiLine" Width="412px" float="right" ReadOnly="True" Font-Italic="True" Font-Bold="True"></asp:Label>
  
-        <table class="auto-style1" class="info">
+        <table class="auto-style1" class="info" >
         <tr>
             <td class="auto-style2">име:</td>
             <td>
@@ -88,8 +88,6 @@
                
             </td>
         </tr>
-       
-     
     </table>
  
  

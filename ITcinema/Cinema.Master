@@ -30,7 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><asp:HyperLink ID="hlHome" runat="server" NavigateUrl="Home.aspx"><div class="hm"><i class="home1"></i><i class="home2"></i></div></asp:HyperLink></li>
                     <li><asp:HyperLink ID="hlProgram" runat="server" NavigateUrl="Program.aspx"><div class="video"><i class="videos"></i><i class="videos1"></i></div></asp:HyperLink></li>
                     <li><asp:HyperLink ID="hlBooking" runat="server" NavigateUrl="Bookticket.aspx"><div class="bk"><i class="booking"></i><i class="booking1"></i></div></asp:HyperLink></li>
-                    <li><asp:HyperLink ID="hlAbout" runat="server" NavigateUrl="#"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></asp:HyperLink></li>
+                    <li><asp:HyperLink ID="hlQuiz" runat="server" NavigateUrl="Quiz.aspx"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></asp:HyperLink></li>
                     <li><asp:HyperLink ID="hlContact" runat="server" NavigateUrl="Contact.aspx"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></asp:HyperLink></li>
                 </ul>
             </div>
@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="Home.aspx">Дома</asp:HyperLink> <br />
                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="Program.aspx">Програма</asp:HyperLink><br />
                     <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="Bookticket.aspx">Резервација на билети</asp:HyperLink><br />
-                    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="#">За нас</asp:HyperLink><br />
+                    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="Quiz.aspx">Квиз</asp:HyperLink><br />
                     <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="Contact.aspx">Контакт</asp:HyperLink><br />
                     
                 </div>

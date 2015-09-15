@@ -14,8 +14,8 @@ namespace ITcinema.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["admin"] == null)
-            //    Response.Redirect("Login.aspx");
+            if (Session["admin"] == null)
+                Response.Redirect("Login.aspx");
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)
@@ -51,6 +51,8 @@ namespace ITcinema.Admin
                 {
                     conn.Open();
                     command.ExecuteNonQuery();
+                    Response.Redirect("Listall.aspx");
+
                 }
                 catch (Exception err)
                 {
@@ -60,7 +62,6 @@ namespace ITcinema.Admin
                 {
                     conn.Close();
                 }
-                Response.Redirect("Listall.aspx");
             }
             else
             {

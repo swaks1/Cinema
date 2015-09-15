@@ -212,5 +212,34 @@ namespace ITcinema
             return id.ToString();
 
         }
+
+        [WebMethod(Description="od originalnoto ime go vraka makedonskiot prevod na filmot")]
+        public string mkName(string name)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["Konekcija"].ConnectionString;
+            string sqlSelect = "SELECT * from Movie WHERE Name='" + name + "'";
+            SqlCommand command = new SqlCommand(sqlSelect, conn);
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return reader["NameMk"].ToString();
+                }
+                reader.Close();
+                return "not valid film?";
+            }
+            catch (Exception err)
+            {
+                return "not valid film?";
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
