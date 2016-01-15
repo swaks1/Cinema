@@ -9,7 +9,10 @@
         .auto-style1 {
             width: 792px;
         }
-        .auto-style2 {
+        .auto-style2 
+		
+		
+		{
             width: 424px;
         }
     </style>
